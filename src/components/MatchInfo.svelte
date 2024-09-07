@@ -57,7 +57,7 @@
 			<table class="table">
 				<tbody>
 					{#each matchSelected.players.filter((x) => x.team === 0) as player}
-						<Player {player}></Player>
+						<Player {player} rtl={false}></Player>
 					{/each}
 				</tbody>
 			</table>
@@ -65,7 +65,7 @@
 			<table class="table">
 				<tbody>
 					{#each matchSelected.players.filter((x) => x.team === 1) as player}
-						<Player {player}></Player>
+						<Player {player} rtl={true}></Player>
 					{/each}
 				</tbody>
 			</table>
