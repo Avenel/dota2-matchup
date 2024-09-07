@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import type { Live } from '$lib/dota2Api';
 	import Player from '../components/Player.svelte';
 
@@ -63,6 +64,15 @@
 				<h2 class="font-bold text-center">
 					{matchSelected.radiant_score} : {matchSelected.dire_score}
 				</h2>
+				{matchSelected.match_id}
+				<div class="flex" style="justify-content: center;">
+					<button
+						class="btn btn-sm btn-primary btn-wide"
+						on:click={() => {
+							goto('/matches/' + matchSelected.match_id);
+						}}>Details</button
+					>
+				</div>
 
 				<div class="flex">
 					<table class="table">
