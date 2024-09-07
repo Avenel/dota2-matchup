@@ -5,6 +5,13 @@
 	import Player from './Player.svelte';
 
 	export let matchSelected: Live;
+
+	const formatGameTime = (gameTime: number) => {
+		const minutes = Math.floor(gameTime / 60);
+		const seconds = gameTime % 60;
+
+		return `${minutes}min:${seconds}s`;
+	};
 </script>
 
 <div class="card bg-base-100 min-w-full lg:min-w-80 shadow-xl my-2">
@@ -24,6 +31,7 @@
 				<div class="font-bold text-xl">
 					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.tag}
 				</div>
+
 				<div class="text-xs">
 					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.name}
 				</div>
@@ -31,6 +39,9 @@
 			<div class="flex-1">
 				<div class="font-bold text-center text-3xl bg-content text-content">
 					{matchSelected.radiant_score} : {matchSelected.dire_score}
+				</div>
+				<div>
+					{formatGameTime(matchSelected.game_time ?? 0)}
 				</div>
 			</div>
 			<div class="flex flex-col w-1/4 bg-content text-content items-center">
@@ -72,11 +83,10 @@
 		</div>
 
 		<div class="flex my-3" style="justify-content: center;">
-			<button
-				class="btn btn-sm btn-primary btn-wide"
-				on:click={() => {
-					goto('/matches/' + matchSelected.match_id);
-				}}>Details</button
+			<a
+				href={'https://www.opendota.com/matches/' + matchSelected.match_id}
+				target="_blank"
+				class="btn btn-sm btn-primary btn-outline btn-wide">Watch on opendota.com</a
 			>
 		</div>
 	</div>

@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { HEROES, HEROES_STATS } from '$lib/tiDb';
+	import {
+		HEROES,
+		HEROES_ABILITIES_INFO,
+		HEROES_SHORT_INFO,
+		HEROES_STATS,
+		type HeroAbilitiesInfo
+	} from '$lib/tiDb';
 	import type { Player } from '$lib/dota2Api';
 
 	export let player: Player;
@@ -7,6 +13,9 @@
 
 	let hero = HEROES.find((x) => x.id === player.hero_id);
 	let heroStats = HEROES_STATS.find((x) => x.id === player.hero_id);
+	let heroInfo = (name: string) => Object.entries(HEROES_SHORT_INFO).find((x) => x[0] == name)?.[1];
+	let heroAbilitiesInfo = (name: string) =>
+		Object.entries(HEROES_ABILITIES_INFO).find((x) => x[0] == name)?.[1] as HeroAbilitiesInfo;
 
 	let heroIcon = (heroStats: any) => 'https://cdn.cloudflare.steamstatic.com' + heroStats?.icon;
 	let heroImage = (heroStats: any) => 'https://cdn.cloudflare.steamstatic.com' + heroStats?.img;
@@ -34,31 +43,56 @@
 </tr>
 
 <dialog bind:this={heroModal} class="modal modal-bottom">
-	<div class="modal-box">
-		<h3 class="text-lg font-bold flex flex-col items-center">
-			<div class="flex">
+	<div class="modal-box prose">
+		{#if hero}
+			<h3 class="text-lg font-bold flex flex-col items-center">
+				<div class="flex">
+					<img
+						alt={hero.name}
+						src={heroIcon(heroStats)}
+						height="30px"
+						style="height:30px;"
+						class="my-0 mr-2"
+					/>
+					<div class="text-2xl font-bold mb-2">{hero.localized_name}</div>
+				</div>
 				<img
-					alt={hero?.name}
-					src={heroIcon(heroStats)}
-					height="30px"
-					style="height:30px;"
+					alt={hero.name}
+					src={heroImage(heroStats)}
+					height="100px"
+					style="height:100px; object-fit: contain;"
 					class="my-0 mr-2"
 				/>
-				<div class="text-2xl font-bold mb-2">{hero?.localized_name}</div>
-			</div>
-			<img
-				alt={hero?.name}
-				src={heroImage(heroStats)}
-				height="100px"
-				style="height:100px; object-fit: contain;"
-				class="my-0 mr-2"
-			/>
-		</h3>
+			</h3>
 
-		<div class="modal-action justify-center">
-			<form method="dialog">
-				<button class="btn btn-wide">Close</button>
-			</form>
-		</div>
+			<div class="mt-2 text-center font-bold">
+				{heroInfo(hero.localized_name)?.attack_type} | {heroInfo(hero.localized_name)
+					?.primary_attribute} | {heroInfo(hero.localized_name)?.role}
+			</div>
+			<div class="text-lg mt-3 text-center">{heroInfo(hero.localized_name)?.strengths}</div>
+
+			<table class="my-2">
+				<thead>
+					<th></th>
+					<th></th>
+				</thead>
+				<tbody>
+					{#if heroAbilitiesInfo(hero.localized_name)}
+						{#each Object.keys(heroAbilitiesInfo(hero.localized_name).abilities) as ability}
+							<tr>
+								<td class="font-bold">{ability}</td>
+								<td>{heroAbilitiesInfo(hero.localized_name).abilities[ability]}</td>
+							</tr>
+						{/each}
+					{/if}
+				</tbody>
+			</table>
+
+			<div class="modal-action justify-center">
+				<form method="dialog">
+					<button class="btn btn-sm btn-wide">Close</button>
+				</form>
+			</div>
+		{/if}
 	</div>
 </dialog>

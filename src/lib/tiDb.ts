@@ -14261,3 +14261,1895 @@ export const HEROES_STATS = [
         ]
     }
 ]
+
+export const HEROES_SHORT_INFO = {
+    "Anti-Mage": {
+        "role": "Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile, excels against spellcasters by draining mana and evading magic damage."
+    },
+    "Axe": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky frontliner who forces enemies to attack him and punishes them with high burst damage."
+    },
+    "Bane": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Single-target crowd control with powerful disables and healing suppression."
+    },
+    "Bloodseeker": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "High speed and damage with life-draining abilities that thrive when enemies are low on health."
+    },
+    "Crystal Maiden": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Provides mana regeneration for the team and controls enemies with slow and disable abilities."
+    },
+    "Drow Ranger": {
+        "role": "Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Strong ranged attacks with high damage output, excels in silencing enemies and dealing physical damage."
+    },
+    "Earthshaker": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Powerful area stuns and crowd control, capable of initiating teamfights and isolating enemies."
+    },
+    "Juggernaut": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Versatile carry with healing, immunity to magic, and high physical damage potential."
+    },
+    "Mirana": {
+        "role": "Support, Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Long-range stuns and mobility, useful as a utility hero with both support and damage potential."
+    },
+    "Morphling": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Adaptable carry with the ability to shift stats for survivability or damage, and steal enemy abilities."
+    },
+    "Shadow Fiend": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Deals heavy physical and magical damage, with strong area-of-effect abilities."
+    },
+    "Phantom Lancer": {
+        "role": "Carry, Escape",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Illusion-based hero that overwhelms enemies with multiple copies, difficult to lock down."
+    },
+    "Puck": {
+        "role": "Initiator, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Highly mobile and evasive, excels in silencing and stunning enemies in teamfights."
+    },
+    "Pudge": {
+        "role": "Durable, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Hook-based initiator with a focus on disrupting enemies and tanking damage."
+    },
+    "Razor": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Drains enemy damage and excels in fast-paced engagements, particularly against physical damage dealers."
+    },
+    "Sand King": {
+        "role": "Initiator, Nuker",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Area-of-effect damage dealer with mobility and strong initiation potential."
+    },
+    "Storm Spirit": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Extremely mobile hero with strong magic damage output, excels in catching enemies off-guard."
+    },
+    "Sven": {
+        "role": "Carry, Initiator",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Deals massive physical damage in bursts and can initiate with a stun and area-of-effect cleave."
+    },
+    "Tiny": {
+        "role": "Nuker, Initiator",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "High burst damage with the ability to toss enemies and deal heavy physical damage in close range."
+    },
+    "Vengeful Spirit": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Provides utility with strong disable and swap abilities, useful for saving allies or initiating fights."
+    },
+    "Windranger": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "High single-target damage with evasion and mobility, excels in sniping and disabling key targets."
+    },
+    "Zeus": {
+        "role": "Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Global magic damage dealer who excels at burst damage and revealing hidden enemies."
+    },
+    "Kunkka": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky initiator with strong area control and displacement abilities, capable of absorbing damage and crowd control."
+    },
+    "Lina": {
+        "role": "Nuker, Support",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "High burst magic damage with strong crowd control and attack speed scaling."
+    },
+    "Lion": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Powerful single-target stuns and crowd control, with a high-damage nuke."
+    },
+    "Shadow Shaman": {
+        "role": "Support, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong disables and pushing power with summoning wards that can siege buildings."
+    },
+    "Slardar": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Excellent at disabling and revealing invisible enemies, excels at locking down targets."
+    },
+    "Tidehunter": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky teamfight initiator with strong area stuns and damage mitigation."
+    },
+    "Witch Doctor": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong healing and damage-over-time abilities, excels in controlling fights with bounces and stuns."
+    },
+    "Lich": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong area magic damage and team utility with slows and damage reduction."
+    },
+    "Riki": {
+        "role": "Carry, Escape",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Stealth-based assassin, excels at ambushing and disabling enemies."
+    },
+    "Enigma": {
+        "role": "Initiator, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong teamfight control with area disables and summonable units for pushing."
+    },
+    "Tinker": {
+        "role": "Nuker, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Exceptional lane-pushing and burst damage, with the ability to refresh abilities frequently and control the map."
+    },
+    "Sniper": {
+        "role": "Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Long-range physical damage dealer, excels at sieging towers and eliminating enemies from a safe distance."
+    },
+    "Necrophos": {
+        "role": "Durable, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong sustain and crowd control through healing and death-based damage, excels in extended teamfights."
+    },
+    "Warlock": {
+        "role": "Support, Initiator",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Teamfight specialist with healing and large area-of-effect damage, summons powerful golems for sustained presence."
+    },
+    "Beastmaster": {
+        "role": "Initiator, Pusher",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Controls the map with summoned units, provides vision, and can disable enemies with a long-duration stun."
+    },
+    "Queen of Pain": {
+        "role": "Nuker, Escape",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Highly mobile hero with strong area damage and burst potential, excels in punishing clumped enemies."
+    },
+    "Venomancer": {
+        "role": "Support, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Damage-over-time specialist with strong teamfight and zoning capabilities through poison-based abilities."
+    },
+    "Faceless Void": {
+        "role": "Carry, Initiator",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Strong late-game carry with crowd control that freezes enemies in time, excels in isolated teamfights."
+    },
+    "Wraith King": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky carry with strong lifesteal and the ability to resurrect upon death, making him difficult to bring down."
+    },
+    "Death Prophet": {
+        "role": "Pusher, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Deals massive damage in prolonged engagements, with strong sustain and pushing power through summoned spirits."
+    },
+    "Phantom Assassin": {
+        "role": "Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "High burst physical damage with evasion, excels at picking off vulnerable targets with critical strikes."
+    },
+    "Pugna": {
+        "role": "Nuker, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Magic damage specialist with powerful nuke and life drain abilities, excels at pushing and punishing spellcasters."
+    },
+    "Templar Assassin": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "High burst physical damage with the ability to evade attacks and deal massive damage through her Psi Blades."
+    },
+    "Viper": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Toxic-based damage dealer, excels at harassing and disabling enemies, particularly with damage over time."
+    },
+    "Luna": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Strong area-of-effect physical damage, excellent at pushing lanes and dealing high burst magic damage."
+    },
+    "Dragon Knight": {
+        "role": "Durable, Pusher",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky frontliner with strong survivability and pushing power, transforms into a dragon for enhanced abilities."
+    },
+    "Dazzle": {
+        "role": "Support",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Provides powerful healing, damage mitigation, and saves allies with strong defensive spells."
+    },
+    "Clockwerk": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Excellent at isolating and disrupting enemies with long-range initiation and trapping abilities."
+    },
+    "Leshrac": {
+        "role": "Nuker, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Area damage specialist with strong pushing potential and high sustained magic damage output."
+    },
+    "Nature's Prophet": {
+        "role": "Pusher, Carry",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Global presence with summonable units, excels at split-pushing and controlling the map."
+    },
+    "Lifestealer": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Self-sustaining carry with strong lifesteal and the ability to infest allies or enemies for mobility and surprise attacks."
+    },
+    "Dark Seer": {
+        "role": "Support, Initiator",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Melee",
+        "strengths": "Teamfight specialist with strong area control and mobility-enhancing abilities, excelling in combo setups."
+    },
+    "Clinkz": {
+        "role": "Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Stealthy archer with high burst physical damage and strong mobility, excels at picking off isolated targets."
+    },
+    "Omniknight": {
+        "role": "Support, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong defensive support with healing and damage mitigation abilities, capable of providing team-wide magic immunity."
+    },
+    "Enchantress": {
+        "role": "Support, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Heals allies and deals pure damage, excels at controlling neutral creeps for pushing and map control."
+    },
+    "Huskar": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Ranged",
+        "strengths": "High-risk, high-reward hero that thrives at low health, excels in sustaining through life-leeching attacks."
+    },
+    "Night Stalker": {
+        "role": "Carry, Initiator",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Dominates during nighttime, excels at silencing and disabling enemies while being extremely durable."
+    },
+    "Broodmother": {
+        "role": "Pusher, Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Creates a web network for mobility and stealth, excels at split-pushing and overwhelming enemies with summoned spiders."
+    },
+    "Bounty Hunter": {
+        "role": "Support, Carry",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Stealth-based hero who excels at tracking enemies and gaining gold for the team by picking off isolated targets."
+    },
+    "Weaver": {
+        "role": "Carry, Escape",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Highly mobile with time-rewind abilities, excels at hit-and-run tactics and surviving dangerous situations."
+    },
+    "Jakiro": {
+        "role": "Support, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Area control and pushing power with damage-over-time abilities, excels at zoning and teamfights."
+    },
+    "Batrider": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong initiation and mobility, excels at isolating key enemies and controlling fights with fire-based abilities."
+    },
+    "Chen": {
+        "role": "Support, Pusher",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Controls neutral creeps for healing and pushing, excels at global healing and map control."
+    },
+    "Spectre": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Late-game carry with global presence, excels at surviving and disrupting teamfights with high survivability."
+    },
+    "Ancient Apparition": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Global magic damage with healing prevention, excels at shutting down regeneration-based heroes."
+    },
+    "Doom": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Powerful single-target silencing and damage-over-time, excels at neutralizing key enemy heroes."
+    },
+    "Ursa": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "High burst damage with strong survivability, excels at quickly killing Roshan and isolated targets."
+    },
+    "Spirit Breaker": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Global initiation with high mobility, excels at disrupting enemies and initiating fights across the map."
+    },
+    "Gyrocopter": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Strong area-of-effect physical and magical damage, excels at both single-target and teamfight engagements."
+    },
+    "Alchemist": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Accelerates gold gain, excels at scaling into a powerful late-game carry and sustaining with high regeneration."
+    },
+    "Invoker": {
+        "role": "Nuker, Support",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Versatile spellcaster with a vast array of abilities, excels in both crowd control and damage."
+    },
+    "Silencer": {
+        "role": "Support, Carry",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Disables enemies' spellcasting with global silence, excels at scaling damage through intelligence theft."
+    },
+    "Outworld Destroyer": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Deals massive damage based on mana and intelligence, excels at disabling and bursting down key targets."
+    },
+    "Lycan": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Summons wolves and transforms into a fast-moving beast, excels at split-pushing and quickly sieging buildings."
+    },
+    "Brewmaster": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Controls fights with area stuns and summons three elementals that each have distinct abilities."
+    },
+    "Shadow Demon": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong disruptive abilities, excels at disabling and saving allies with illusions and banishment."
+    },
+    "Lone Druid": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged/Melee",
+        "strengths": "Controls a powerful spirit bear companion, excels at pushing and split-farming with strong survivability."
+    },
+    "Chaos Knight": {
+        "role": "Carry, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Summons powerful illusions, excels at dealing high burst physical damage and disrupting fights."
+    },
+    "Meepo": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Controls multiple clones, excels at overwhelming enemies with numbers and fast farming speed."
+    },
+    "Treant Protector": {
+        "role": "Support, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Provides global healing and invisibility for allies, excels at protecting buildings and initiating fights."
+    },
+    "Ogre Magi": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Melee",
+        "strengths": "Randomly amplified abilities, excels at providing crowd control and high burst magic damage."
+    },
+    "Undying": {
+        "role": "Support, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Excels in teamfights by summoning zombies and reducing enemy strength, making him difficult to deal with in prolonged fights."
+    },
+    "Rubick": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Steals enemy abilities, excels at turning fights by using powerful spells against their original casters."
+    },
+    "Disruptor": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Controls fights with kinetic field and static storm, excels at catching and punishing enemies trying to escape."
+    },
+    "Nyx Assassin": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Stealth-based hero with strong burst damage and disables, excels at hunting down and ambushing vulnerable targets."
+    },
+    "Naga Siren": {
+        "role": "Carry, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Creates powerful illusions and controls fights with an area sleep, excels at split-pushing and teamfight initiation."
+    },
+    "Keeper of the Light": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Provides mana regeneration and area-of-effect damage, excels at supporting the team and defending towers."
+    },
+    "Io": {
+        "role": "Support, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Ranged",
+        "strengths": "Global mobility and healing support, excels at tethering to allies and relocating them around the map."
+    },
+    "Visage": {
+        "role": "Support, Durable",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Summons familiars for utility and damage, excels at controlling fights with crowd control and burst damage."
+    },
+    "Slark": {
+        "role": "Carry, Escape",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile and stealthy, excels at picking off isolated enemies and surviving through regeneration and escape."
+    },
+    "Medusa": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Late-game carry with strong area damage and survivability through her mana shield, excels in drawn-out fights."
+    },
+    "Troll Warlord": {
+        "role": "Carry, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee/Ranged",
+        "strengths": "Versatile attack modes, excels in high attack speed and disabling enemies with bash abilities."
+    },
+    "Centaur Warrunner": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky frontliner with high burst damage and strong initiation, excels in teamfights with global mobility."
+    },
+    "Magnus": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong area-of-effect control and initiation, excels at repositioning enemies and amplifying physical damage."
+    },
+    "Timbersaw": {
+        "role": "Durable, Nuker",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile hero with burst damage and survivability, excels in cutting down trees and tanking damage."
+    },
+    "Bristleback": {
+        "role": "Durable, Nuker",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky hero that excels in long engagements, dealing more damage and taking less as enemies attack him from behind."
+    },
+    "Tusk": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong initiator with snowball mechanics and crowd control, excels at isolating and bursting down targets."
+    },
+    "Skywrath Mage": {
+        "role": "Nuker, Support",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Burst magic damage specialist with strong single-target nukes, excels at shutting down key enemies quickly."
+    },
+    "Abaddon": {
+        "role": "Support, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Heals and shields allies, excels at sustaining his team and becoming difficult to kill through his ultimate."
+    },
+    "Elder Titan": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong area-of-effect control with spirit-based abilities, excels in teamfights by reducing enemy resistances."
+    },
+    "Legion Commander": {
+        "role": "Carry, Initiator",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Duel-based initiator with strong sustain, excels at locking down enemies and scaling through winning duels."
+    },
+    "Techies": {
+        "role": "Nuker, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Trap-based hero that excels at area denial and surprise burst damage, disrupts enemy positioning with mines."
+    },
+    "Ember Spirit": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Mobile hero with strong area damage and survivability, excels at chasing and escaping with remnant-based abilities."
+    },
+    "Earth Spirit": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile initiator with strong crowd control and teamfight presence, excels at disabling multiple enemies."
+    },
+    "Underlord": {
+        "role": "Durable, Pusher",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky frontliner with strong area-of-effect damage and crowd control, excels at pushing lanes and controlling fights."
+    },
+    "Terrorblade": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Illusion-based carry with strong pushing power, excels at dealing massive physical damage and swapping health with enemies."
+    },
+    "Phoenix": {
+        "role": "Support, Initiator",
+        "primary_attribute": "Strength",
+        "attack_type": "Ranged",
+        "strengths": "Heals and damages in large areas with fire-based abilities, excels in teamfights with a powerful resurrection mechanic."
+    },
+    "Oracle": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Provides strong defensive and healing abilities, excels at saving allies and turning fights with well-timed spells."
+    },
+    "Winter Wyvern": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong area control and healing support, excels at turning enemies against each other with her ultimate."
+    },
+    "Arc Warden": {
+        "role": "Carry, Pusher",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "Creates a clone of himself to double his damage output, excels at split-pushing and overwhelming enemies."
+    },
+    "Monkey King": {
+        "role": "Carry, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile and versatile, excels at controlling fights with crowd control and dealing high burst physical damage."
+    },
+    "Dark Willow": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong crowd control and burst magic damage, excels at disrupting enemy positioning and locking down targets."
+    },
+    "Pangolier": {
+        "role": "Initiator, Disabler",
+        "primary_attribute": "Agility",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile and disruptive, excels at rolling through enemies with crowd control and evading damage."
+    },
+    "Grimstroke": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Strong area-of-effect control and disabling, excels at linking enemies together for devastating combos."
+    },
+    "Hoodwink": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "High burst damage with mobility and escape, excels at ambushing enemies from the treeline and disabling them."
+    },
+    "Void Spirit": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Melee",
+        "strengths": "Highly mobile and elusive, excels at diving in and out of fights while dealing strong burst magic damage."
+    },
+    "Snapfire": {
+        "role": "Support, Nuker",
+        "primary_attribute": "Strength",
+        "attack_type": "Ranged",
+        "strengths": "Provides powerful area-of-effect damage and utility, excels in teamfights with long-range artillery and crowd control."
+    },
+    "Mars": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong area control and durability, excels at initiating fights and locking down enemies in his arena."
+    },
+    "Ringmaster": {
+        "role": "Support, Disabler",
+        "primary_attribute": "Intelligence",
+        "attack_type": "Ranged",
+        "strengths": "Crowd control and debuff-based hero, excels at controlling enemy movement and disrupting teamfights."
+    },
+    "Dawnbreaker": {
+        "role": "Carry, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Tanky frontliner with healing and global initiation, excels at sustaining in fights and supporting allies."
+    },
+    "Marci": {
+        "role": "Initiator, Support",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "High mobility and strong initiation, excels at controlling enemies and supporting teammates with physical damage."
+    },
+    "Primal Beast": {
+        "role": "Initiator, Durable",
+        "primary_attribute": "Strength",
+        "attack_type": "Melee",
+        "strengths": "Strong crowd control and durability, excels at charging into fights and disrupting enemy formations."
+    },
+    "Muerta": {
+        "role": "Carry, Nuker",
+        "primary_attribute": "Agility",
+        "attack_type": "Ranged",
+        "strengths": "High burst physical and magic damage, excels at eliminating enemies quickly and controlling the battlefield with her ultimate."
+    }
+
+
+}
+
+export interface HeroAbilitiesInfo {
+    description: string;
+    abilities: any;
+}
+
+export const HEROES_ABILITIES_INFO = {
+    "Anti-Mage": {
+        "description": "A highly mobile hero who excels at shutting down spellcasters.",
+        "abilities": {
+            "Mana Break": "Burns the target's mana with each attack.",
+            "Blink": "Teleports to a short distance.",
+            "Counterspell": "Passively grants magic resistance and can reflect a spell.",
+            "Mana Void": "Damages enemies based on the difference between their current and maximum mana."
+        }
+    },
+    "Axe": {
+        "description": "A durable initiator who thrives in the middle of battle, disrupting enemies.",
+        "abilities": {
+            "Berserker's Call": "Forces nearby enemies to attack Axe.",
+            "Battle Hunger": "Deals damage over time and slows a target unless they kill an enemy unit.",
+            "Counter Helix": "Axe spins after being attacked, dealing damage to nearby enemies.",
+            "Culling Blade": "Instantly kills a target if their health is below a threshold."
+        }
+    },
+    "Bane": {
+        "description": "A disabling support with strong single-target control abilities.",
+        "abilities": {
+            "Enfeeble": "Reduces the target's damage and healing.",
+            "Brain Sap": "Drains the target's health and restores Bane's.",
+            "Nightmare": "Puts a target to sleep, disabling them for a time.",
+            "Fiend's Grip": "Channels a beam to disable and damage an enemy."
+        }
+    },
+    "Bloodseeker": {
+        "description": "A fast-moving hero who excels at hunting down weakened enemies.",
+        "abilities": {
+            "Bloodrage": "Increases attack damage and healing from attacks, but also increases damage taken.",
+            "Blood Rite": "Deals magic damage and silences in an area after a delay.",
+            "Thirst": "Grants increased movement speed and vision of low-health enemies.",
+            "Rupture": "Causes a target to take damage when they move."
+        }
+    },
+    "Crystal Maiden": {
+        "description": "A powerful support caster with strong area-of-effect control abilities.",
+        "abilities": {
+            "Crystal Nova": "Slows and damages enemies in an area.",
+            "Frostbite": "Roots a target in place and deals damage over time.",
+            "Arcane Aura": "Grants mana regeneration to allies globally.",
+            "Freezing Field": "Deals random area damage and slows enemies in a large radius."
+        }
+    },
+    "Drow Ranger": {
+        "description": "A ranged agility hero that excels at dealing physical damage from afar.",
+        "abilities": {
+            "Frost Arrows": "Slows enemies with each attack.",
+            "Gust": "Releases a wave of silence in front of Drow Ranger.",
+            "Multishot": "Fires multiple arrows in a cone, dealing damage and applying Frost Arrows.",
+            "Marksmanship": "Grants bonus agility and a chance to deal increased damage."
+        }
+    },
+    "Earthshaker": {
+        "description": "A powerful initiator with stuns that can affect multiple enemies at once.",
+        "abilities": {
+            "Fissure": "Creates an impassable line that stuns and damages enemies.",
+            "Enchant Totem": "Empowers Earthshaker's next attack to deal extra damage.",
+            "Aftershock": "Stuns and damages nearby enemies whenever Earthshaker casts a spell.",
+            "Echo Slam": "Deals damage to all enemies in an area based on the number of units nearby."
+        }
+    },
+    "Juggernaut": {
+        "description": "A mobile carry with strong physical damage output and healing capabilities.",
+        "abilities": {
+            "Blade Fury": "Deals damage in an area around Juggernaut while making him immune to magic.",
+            "Healing Ward": "Summons a ward that heals nearby allies.",
+            "Blade Dance": "Gives Juggernaut a chance to deal critical strikes.",
+            "Omnislash": "Juggernaut slashes multiple times, jumping between nearby enemies."
+        }
+    },
+    "Mirana": {
+        "description": "A versatile hero who excels at long-range attacks and area control.",
+        "abilities": {
+            "Starstorm": "Calls down stars to deal damage to nearby enemies, with a secondary star hitting the closest enemy.",
+            "Sacred Arrow": "Fires an arrow that stuns and deals bonus damage based on distance traveled.",
+            "Leap": "Mirana leaps forward, gaining attack speed and movement speed.",
+            "Moonlight Shadow": "Turns all allies invisible for a short duration."
+        }
+    },
+    "Morphling": {
+        "description": "A highly adaptive hero capable of shifting attributes and copying abilities.",
+        "abilities": {
+            "Waveform": "Morphling becomes a wave, dealing damage and passing through enemies.",
+            "Adaptive Strike (Agility)": "Deals damage based on Morphling's agility.",
+            "Adaptive Strike (Strength)": "Stuns and knocks back the target based on Morphling's strength.",
+            "Morph": "Morphling shifts between strength and agility, altering his stats."
+        }
+    },
+    "Shadow Fiend": {
+        "description": "A ranged hero with powerful magic and physical damage output.",
+        "abilities": {
+            "Shadowraze": "Deals damage in a targeted area.",
+            "Necromastery": "Increases Shadow Fiend's damage with each soul he collects.",
+            "Presence of the Dark Lord": "Reduces the armor of nearby enemies.",
+            "Requiem of Souls": "Releases gathered souls in a radius, dealing damage and slowing enemies."
+        }
+    },
+    "Phantom Lancer": {
+        "description": "An elusive carry that creates illusions to overwhelm enemies.",
+        "abilities": {
+            "Spirit Lance": "Throws a lance that deals damage and creates an illusion.",
+            "Doppelganger": "Phantom Lancer disappears for a moment and reappears with illusions.",
+            "Phantom Rush": "Increases movement speed and grants a bonus attack when targeting enemies.",
+            "Juxtapose": "Grants a chance to create illusions of Phantom Lancer with each attack."
+        }
+    },
+    "Puck": {
+        "description": "A highly mobile hero with strong area control and disruptive abilities.",
+        "abilities": {
+            "Illusory Orb": "Sends out an orb that deals damage and allows Puck to teleport to its location.",
+            "Waning Rift": "Deals damage and silences enemies in an area around Puck.",
+            "Phase Shift": "Puck dodges all attacks and spells for a brief moment.",
+            "Dream Coil": "Leashes enemies in an area, dealing damage if they move too far."
+        }
+    },
+    "Pudge": {
+        "description": "A tanky disabler with strong single-target control and area damage.",
+        "abilities": {
+            "Meat Hook": "Throws a hook that pulls the first unit it hits back to Pudge.",
+            "Rot": "Deals damage and slows enemies around Pudge at the cost of his health.",
+            "Flesh Heap": "Increases Pudge's magic resistance and grants bonus strength for each nearby death.",
+            "Dismember": "Channels a disabling bite that deals damage and heals Pudge."
+        }
+    },
+    "Razor": {
+        "description": "A ranged carry that excels at draining enemy damage and punishing mobility.",
+        "abilities": {
+            "Plasma Field": "Releases an expanding and contracting ring that deals damage and slows.",
+            "Static Link": "Drains the target's attack damage, adding it to Razor's own.",
+            "Storm Surge": "Grants movement speed for each nearby enemy.",
+            "Eye of the Storm": "Creates a storm that repeatedly damages and reduces the armor of the lowest-health enemy."
+        }
+    },
+    "Sand King": {
+        "description": "An initiator with strong area control and mobility abilities.",
+        "abilities": {
+            "Burrowstrike": "Dashes underground to stun and damage enemies in a line.",
+            "Sand Storm": "Creates a storm of sand that grants invisibility and deals damage over time.",
+            "Caustic Finale": "Causes enemies to explode upon death, dealing damage to surrounding units.",
+            "Epicenter": "Channels seismic waves that deal area damage and slow enemies."
+        }
+    },
+    "Storm Spirit": {
+        "description": "A mobile, magic-based hero who excels at picking off targets and disrupting the battlefield.",
+        "abilities": {
+            "Static Remnant": "Creates a remnant that explodes after a delay, damaging nearby enemies.",
+            "Electric Vortex": "Pulls a target toward Storm Spirit, slowing them.",
+            "Overload": "Gains bonus magic damage on his next attack after casting a spell.",
+            "Ball Lightning": "Turns into a ball of electricity, zipping across the battlefield."
+        }
+    },
+    "Sven": {
+        "description": "A durable melee carry with powerful area damage and crowd control.",
+        "abilities": {
+            "Storm Hammer": "Throws a hammer that stuns and damages enemies in an area.",
+            "Great Cleave": "Sven's attacks cleave, dealing damage to nearby enemies.",
+            "Warcry": "Increases armor and movement speed for Sven and his allies.",
+            "God's Strength": "Grants a massive increase to Sven's attack damage for a short duration."
+        }
+    },
+    "Tiny": {
+        "description": "A melee strength hero who grows in power and size as the game progresses.",
+        "abilities": {
+            "Avalanche": "Creates an area of debris that stuns and damages enemies.",
+            "Toss": "Throws a nearby unit at a target location, dealing damage.",
+            "Tree Grab": "Allows Tiny to wield a tree, increasing attack range and damage.",
+            "Grow": "Increases Tiny's size, attack damage, and armor but reduces attack speed."
+        }
+    },
+    "Vengeful Spirit": {
+        "description": "A ranged support with strong offensive and defensive utility.",
+        "abilities": {
+            "Magic Missile": "Stuns and damages an enemy target.",
+            "Wave of Terror": "Releases a wave that reduces enemy armor and grants vision.",
+            "Vengeance Aura": "Increases the attack damage of nearby allies.",
+            "Nether Swap": "Instantly swaps positions with a target unit, friend or foe."
+        }
+    },
+    "Windranger": {
+        "description": "A versatile hero with strong mobility and long-range attacks.",
+        "abilities": {
+            "Shackleshot": "Stuns an enemy and potentially another target if they are aligned.",
+            "Powershot": "Fires a long-range arrow that deals damage and destroys trees.",
+            "Windrun": "Increases movement speed and grants evasion for a short duration.",
+            "Focus Fire": "Allows rapid attacks on a single target, reducing attack damage but increasing speed."
+        }
+    },
+    "Zeus": {
+        "description": "A magic-based hero with strong global presence and high burst damage.",
+        "abilities": {
+            "Arc Lightning": "Deals damage to a target and jumps to nearby enemies.",
+            "Lightning Bolt": "Calls down a lightning strike, dealing damage and granting true sight.",
+            "Static Field": "Deals a percentage of enemies' health as damage whenever Zeus casts a spell.",
+            "Thundergod's Wrath": "Deals damage to all enemy heroes globally."
+        }
+    },
+    "Kunkka": {
+        "description": "A durable melee hero with strong area damage and crowd control.",
+        "abilities": {
+            "Torrent": "Summons a delayed explosion of water, knocking enemies into the air and slowing them.",
+            "Tidebringer": "Grants bonus damage and cleave on Kunkka's next attack.",
+            "X Marks the Spot": "Marks a hero's position and returns them to it after a delay.",
+            "Ghostship": "Summons a ghost ship that stuns and deals damage in an area."
+        }
+    },
+    "Lina": {
+        "description": "A ranged caster with powerful area and single-target burst damage.",
+        "abilities": {
+            "Dragon Slave": "Sends out a wave of fire, dealing damage to all enemies in its path.",
+            "Light Strike Array": "Summons a pillar of flame that stuns and damages enemies in an area.",
+            "Fiery Soul": "Increases attack speed and movement speed each time Lina casts a spell.",
+            "Laguna Blade": "Unleashes a powerful bolt of lightning, dealing massive damage to a single target."
+        }
+    },
+    "Lion": {
+        "description": "A support hero with strong disabling and burst damage abilities.",
+        "abilities": {
+            "Earth Spike": "Sends out a line of spikes that stuns and damages enemies.",
+            "Hex": "Turns a target into a harmless creature, disabling them.",
+            "Mana Drain": "Drains mana from a target, restoring it to Lion.",
+            "Finger of Death": "Deals a large amount of damage to a single target."
+        }
+    },
+    "Shadow Shaman": {
+        "description": "A versatile support with powerful disabling and pushing abilities.",
+        "abilities": {
+            "Ether Shock": "Releases a shock of energy that hits multiple enemies.",
+            "Hex": "Transforms a target into a harmless creature, disabling them.",
+            "Shackles": "Channels to disable and damage a target over time.",
+            "Mass Serpent Ward": "Summons a circle of serpent wards that attack enemies."
+        }
+    },
+    "Slardar": {
+        "description": "A melee initiator with strong mobility and armor-reducing abilities.",
+        "abilities": {
+            "Guardian Sprint": "Increases movement speed and allows Slardar to move through units.",
+            "Slithereen Crush": "Stuns and damages enemies around Slardar.",
+            "Bash of the Deep": "Grants a chance to bash enemies on attack, dealing bonus damage and stunning.",
+            "Corrosive Haze": "Reduces the armor of a target and grants vision of them."
+        }
+    },
+    "Tidehunter": {
+        "description": "A durable initiator with strong area control and damage mitigation.",
+        "abilities": {
+            "Gush": "Slows and reduces the armor of a target, dealing damage.",
+            "Kraken Shell": "Passively blocks damage and removes debuffs after taking a certain amount of damage.",
+            "Anchor Smash": "Deals area damage and reduces enemy attack damage.",
+            "Ravage": "Unleashes tentacles in all directions, stunning and damaging enemies."
+        }
+    },
+    "Witch Doctor": {
+        "description": "A support hero with strong healing and damage over time abilities.",
+        "abilities": {
+            "Paralyzing Cask": "Throws a cask that bounces between enemies, stunning them.",
+            "Voodoo Restoration": "Heals nearby allies over time.",
+            "Maledict": "Curses enemies, dealing damage over time based on the damage they take.",
+            "Death Ward": "Summons a ward that attacks enemies with high damage."
+        }
+    },
+    "Lich": {
+        "description": "A ranged support with powerful area control and defensive abilities.",
+        "abilities": {
+            "Frost Blast": "Deals damage and slows the target and nearby enemies.",
+            "Frost Shield": "Reduces damage taken and slows attackers of the shielded unit.",
+            "Sinister Gaze": "Forces an enemy to move toward Lich, disabling them.",
+            "Chain Frost": "Unleashes a chain of ice that bounces between enemies, dealing damage."
+        }
+    },
+    "Riki": {
+        "description": "A stealthy hero who excels at ambushing and disabling enemies.",
+        "abilities": {
+            "Smoke Screen": "Throws a smoke bomb, silencing and slowing enemies within the area.",
+            "Blink Strike": "Teleports behind a target and deals bonus damage.",
+            "Cloak and Dagger": "Grants invisibility and bonus backstab damage.",
+            "Tricks of the Trade": "Riki attacks all enemies in an area multiple times from stealth."
+        }
+    },
+    "Enigma": {
+        "description": "A powerful controller with area-of-effect abilities and the potential to turn fights.",
+        "abilities": {
+            "Malefice": "Stuns a target periodically over time.",
+            "Demonic Conversion": "Turns a creep into eidolons, which split after a few attacks.",
+            "Midnight Pulse": "Deals percentage-based damage over time to enemies in an area.",
+            "Black Hole": "Channels a vortex that pulls in and damages enemies over time."
+        }
+    },
+    "Tinker": {
+        "description": "A ranged caster with high burst damage and strong lane control.",
+        "abilities": {
+            "Laser": "Blinds and damages an enemy, causing them to miss attacks.",
+            "Heat-Seeking Missile": "Launches missiles that home in on the nearest enemies.",
+            "March of the Machines": "Releases waves of machines that damage enemies in their path.",
+            "Rearm": "Refreshes the cooldowns of Tinker's items and abilities."
+        }
+    },
+    "Sniper": {
+        "description": "A long-range damage dealer who excels at picking off enemies from a distance.",
+        "abilities": {
+            "Shrapnel": "Releases a charge that slows and damages enemies in an area.",
+            "Headshot": "Grants a chance to deal bonus damage and slow the target on attack.",
+            "Take Aim": "Increases Sniper's attack range for a short duration.",
+            "Assassinate": "Sniper locks onto a target and deals high damage from a long range."
+        }
+    },
+    "Necrophos": {
+        "description": "A ranged hero who excels at dealing damage over time and sustaining in fights.",
+        "abilities": {
+            "Death Pulse": "Releases a pulse of energy that damages enemies and heals allies.",
+            "Ghost Shroud": "Turns Necrophos ethereal, increasing healing but preventing physical damage.",
+            "Heartstopper Aura": "Deals percentage-based damage over time to nearby enemies.",
+            "Reaper's Scythe": "Deals damage based on the target's missing health and temporarily disables them."
+        }
+    },
+    "Warlock": {
+        "description": "A support hero with strong healing and area-of-effect control abilities.",
+        "abilities": {
+            "Fatal Bonds": "Links enemies together, causing them to share a portion of damage taken.",
+            "Shadow Word": "Heals or damages a target over time.",
+            "Upheaval": "Channels a slowing effect on enemies in an area.",
+            "Chaotic Offering": "Summons a golem that deals damage and stuns enemies on impact."
+        }
+    },
+    "Beastmaster": {
+        "description": "A durable initiator who can summon animals to aid in battle.",
+        "abilities": {
+            "Wild Axes": "Throws axes that deal damage and return to Beastmaster.",
+            "Call of the Wild Hawk": "Summons a hawk that provides vision.",
+            "Call of the Wild Boar": "Summons a boar that slows and damages enemies.",
+            "Primal Roar": "Stuns and damages an enemy, knocking back nearby units."
+        }
+    },
+    "Queen of Pain": {
+        "description": "A mobile magic-based hero who excels at area damage and burst.",
+        "abilities": {
+            "Shadow Strike": "Poisons an enemy, dealing damage over time and slowing them.",
+            "Blink": "Teleports to a short distance.",
+            "Scream of Pain": "Releases a scream that deals damage in an area around Queen of Pain.",
+            "Sonic Wave": "Unleashes a wave of sound that deals massive damage and knocks enemies back."
+        }
+    },
+    "Venomancer": {
+        "description": "A ranged hero who excels at damage over time and area control.",
+        "abilities": {
+            "Venomous Gale": "Releases a toxic wave that damages and slows enemies over time.",
+            "Poison Sting": "Adds poison damage to Venomancer's attacks.",
+            "Plague Ward": "Summons a ward that attacks enemies and applies Poison Sting.",
+            "Poison Nova": "Releases a wave of poison that deals damage over time to all enemies hit."
+        }
+    },
+    "Faceless Void": {
+        "description": "A durable carry with strong initiation and time manipulation abilities.",
+        "abilities": {
+            "Time Walk": "Dashes to a location, undoing recent damage taken.",
+            "Time Dilation": "Slows enemy abilities and movement speed in an area.",
+            "Time Lock": "Grants a chance to stun an enemy and deal bonus damage on attack.",
+            "Chronosphere": "Traps all units in a large area, freezing time for them except Faceless Void."
+        }
+    },
+    "Wraith King": {
+        "description": "A durable melee carry with strong crowd control and self-revive.",
+        "abilities": {
+            "Wraithfire Blast": "Throws a flaming projectile that stuns and damages an enemy.",
+            "Vampiric Spirit": "Grants lifesteal and summons skeletons from slain enemies.",
+            "Mortal Strike": "Grants a chance to deal critical damage.",
+            "Reincarnation": "Wraith King revives after death, stunning nearby enemies."
+        }
+    },
+    "Death Prophet": {
+        "description": "A powerful caster with strong area-of-effect damage and sustainability.",
+        "abilities": {
+            "Crypt Swarm": "Releases a wave of bats that deal damage to enemies in a cone.",
+            "Silence": "Silences enemies in an area, preventing them from casting spells.",
+            "Spirit Siphon": "Drains health from a target, healing Death Prophet.",
+            "Exorcism": "Summons spirits that damage nearby enemies and heal Death Prophet when they return."
+        }
+    },
+    "Phantom Assassin": {
+        "description": "A mobile carry hero who excels at burst damage and evasion.",
+        "abilities": {
+            "Stifling Dagger": "Throws a dagger that slows and deals a portion of Phantom Assassin's attack damage.",
+            "Phantom Strike": "Teleports to a target unit and gains attack speed for a few attacks.",
+            "Blur": "Increases evasion and makes Phantom Assassin harder to detect.",
+            "Coup de Grace": "Grants a chance to deal massive critical damage on attacks."
+        }
+    },
+    "Pugna": {
+        "description": "A powerful magic-based hero with strong burst and utility.",
+        "abilities": {
+            "Nether Blast": "Deals area-of-effect damage to enemies and buildings.",
+            "Decrepify": "Turns a unit ethereal, amplifying magic damage but preventing physical attacks.",
+            "Nether Ward": "Summons a ward that drains mana and deals damage based on spells cast by enemies.",
+            "Life Drain": "Channels a beam that drains health from a target and heals Pugna."
+        }
+    },
+    "Templar Assassin": {
+        "description": "A burst damage hero who excels at positioning and evasion.",
+        "abilities": {
+            "Refraction": "Templar Assassin absorbs damage and gains bonus damage for a few attacks.",
+            "Meld": "Grants invisibility and reduces the armor of an enemy when attacking from stealth.",
+            "Psi Blades": "Templar Assassin's attacks pierce through enemies, dealing damage in a line.",
+            "Psionic Trap": "Places traps that slow enemies when activated."
+        }
+    },
+    "Viper": {
+        "description": "A ranged hero with strong damage over time and area control abilities.",
+        "abilities": {
+            "Poison Attack": "Adds a slowing poison to Viper's attacks that deals damage over time.",
+            "Nethertoxin": "Creates a cloud that deals damage and disables passive abilities.",
+            "Corrosive Skin": "Reduces damage taken and slows enemies who attack Viper.",
+            "Viper Strike": "Slows and deals damage over time to an enemy hero."
+        }
+    },
+    "Luna": {
+        "description": "A ranged carry who excels at high burst damage and area-of-effect abilities.",
+        "abilities": {
+            "Lucent Beam": "Fires a beam of light that damages and stuns an enemy.",
+            "Moon Glaives": "Luna's attacks bounce between enemies, dealing damage to multiple targets.",
+            "Lunar Blessing": "Increases the attack damage of nearby allies and grants night vision.",
+            "Eclipse": "Unleashes a series of Lucent Beams on random enemies in an area."
+        }
+    },
+    "Dragon Knight": {
+        "description": "A durable melee hero who can transform into a dragon, gaining powerful abilities.",
+        "abilities": {
+            "Breathe Fire": "Unleashes a wave of fire that damages and reduces the attack damage of enemies.",
+            "Dragon Tail": "Stuns an enemy target with a powerful melee strike.",
+            "Dragon Blood": "Increases Dragon Knight's health regeneration and armor.",
+            "Elder Dragon Form": "Transforms Dragon Knight into a dragon, granting him bonus attack range and additional effects."
+        }
+    },
+    "Dazzle": {
+        "description": "A support hero with strong healing and defensive abilities.",
+        "abilities": {
+            "Poison Touch": "Dazzle throws poison, damaging and slowing an enemy over time.",
+            "Shallow Grave": "Prevents an ally from dying for a short duration.",
+            "Shadow Wave": "Heals allies and damages nearby enemies.",
+            "Bad Juju": "Passively reduces cooldowns and applies a debuff that increases damage taken."
+        }
+    },
+    "Clockwerk": {
+        "description": "A durable initiator with strong area control and disruption abilities.",
+        "abilities": {
+            "Battery Assault": "Releases periodic bursts that damage and stun nearby enemies.",
+            "Power Cogs": "Traps enemies in cogs that damage and push them back.",
+            "Rocket Flare": "Launches a flare that provides vision and damages enemies in an area.",
+            "Hookshot": "Fires a hook that latches onto an enemy or unit, pulling Clockwerk to it and stunning the target."
+        }
+    },
+    "Leshrac": {
+        "description": "A caster with powerful area-of-effect damage and pushing capabilities.",
+        "abilities": {
+            "Split Earth": "Leshrac ruptures the ground, dealing damage and stunning enemies.",
+            "Diabolic Edict": "Releases random explosions that deal damage to nearby enemies and buildings.",
+            "Lightning Storm": "Summons a lightning storm that damages and slows multiple enemies.",
+            "Pulse Nova": "Continuously deals area damage around Leshrac."
+        }
+    },
+    "Nature's Prophet": {
+        "description": "A versatile hero who can push lanes and teleport across the map.",
+        "abilities": {
+            "Sprout": "Summons a ring of trees around a target, trapping them.",
+            "Teleportation": "Teleports to any location on the map.",
+            "Nature's Call": "Converts trees into treants that fight for Nature's Prophet.",
+            "Wrath of Nature": "Unleashes a bouncing attack that damages multiple enemies."
+        }
+    },
+    "Lifestealer": {
+        "description": "A durable melee carry hero who excels at sustained fights and life-stealing.",
+        "abilities": {
+            "Rage": "Grants magic immunity and increased attack speed for a short duration.",
+            "Feast": "Lifestealer's attacks heal him for a percentage of the target's max health.",
+            "Ghoul Frenzy": "Slows enemies with each attack.",
+            "Infest": "Lifestealer enters a unit, healing himself and emerging with an explosion of damage."
+        }
+    },
+    "Dark Seer": {
+        "description": "A utility hero with strong area control and initiation abilities.",
+        "abilities": {
+            "Vacuum": "Pulls enemies in a radius to a target point, dealing damage.",
+            "Ion Shell": "Covers a unit in a shield that damages nearby enemies over time.",
+            "Surge": "Grants a speed boost to an allied unit.",
+            "Wall of Replica": "Creates a wall that produces damaging illusions of enemies that pass through."
+        }
+    },
+    "Clinkz": {
+        "description": "A ranged carry hero who excels at ambushing and dealing high burst damage.",
+        "abilities": {
+            "Strafe": "Increases attack speed for a short duration.",
+            "Searing Arrows": "Adds bonus damage to Clinkz's attacks.",
+            "Skeleton Walk": "Turns invisible and gains movement speed.",
+            "Death Pact": "Consumes a unit, gaining a portion of its health and damage."
+        }
+    },
+    "Omniknight": {
+        "description": "A durable support hero with strong healing and defensive abilities.",
+        "abilities": {
+            "Purification": "Heals an ally and damages enemies in the area around them.",
+            "Heavenly Grace": "Grants status resistance and health regeneration to an ally.",
+            "Degen Aura": "Slows the movement and attack speed of nearby enemies.",
+            "Guardian Angel": "Grants physical damage immunity to allies in an area."
+        }
+    },
+    "Enchantress": {
+        "description": "A ranged support who excels at healing and dealing damage over time.",
+        "abilities": {
+            "Impetus": "Deals bonus damage based on the distance between Enchantress and her target.",
+            "Enchant": "Slows an enemy or converts a neutral creep to fight for Enchantress.",
+            "Nature's Attendants": "Summons healing wisps that heal nearby allies.",
+            "Untouchable": "Reduces the attack speed of enemies that attack Enchantress."
+        }
+    },
+    "Huskar": {
+        "description": "A melee hero who thrives in low-health situations, dealing damage to enemies while sacrificing his own health.",
+        "abilities": {
+            "Inner Fire": "Knocks back and disarms enemies around Huskar.",
+            "Burning Spear": "Adds damage to Huskar's attacks at the cost of his own health.",
+            "Berserker's Blood": "Increases attack speed and magic resistance based on missing health.",
+            "Life Break": "Huskar leaps at a target, sacrificing a portion of his health to deal damage."
+        }
+    },
+    "Night Stalker": {
+        "description": "A durable initiator who becomes much stronger during the night.",
+        "abilities": {
+            "Void": "Slows and damages a target.",
+            "Crippling Fear": "Silences enemies in an area around Night Stalker, with an extended duration at night.",
+            "Hunter in the Night": "Increases movement speed and attack speed at night.",
+            "Dark Ascension": "Temporarily turns day into night, granting vision and bonus attack damage."
+        }
+    },
+    "Broodmother": {
+        "description": "A mobile hero who excels at controlling areas with her web and spawning spiders.",
+        "abilities": {
+            "Spawn Spiderlings": "Deals damage to an enemy and spawns spiderlings if the enemy dies.",
+            "Spin Web": "Creates a web that grants movement speed, health regeneration, and unobstructed pathing.",
+            "Incapacitating Bite": "Slows and applies a miss chance to enemies hit by Broodmother's attacks.",
+            "Insatiable Hunger": "Grants lifesteal and bonus damage for a short duration."
+        }
+    },
+    "Bounty Hunter": {
+        "description": "A stealthy hero who excels at tracking and picking off enemies.",
+        "abilities": {
+            "Shuriken Toss": "Throws a shuriken that bounces between tracked enemies.",
+            "Jinada": "Grants bonus damage and slows the target on attack.",
+            "Shadow Walk": "Turns invisible and deals bonus damage on the next attack.",
+            "Track": "Reveals and grants bonus gold when killing a tracked enemy."
+        }
+    },
+    "Weaver": {
+        "description": "A highly mobile hero who can deal damage over time and evade attacks.",
+        "abilities": {
+            "The Swarm": "Summons beetles that latch onto enemies, reducing armor and dealing damage.",
+            "Shukuchi": "Grants invisibility and increased movement speed, damaging enemies passed through.",
+            "Geminate Attack": "Allows Weaver to attack twice in quick succession.",
+            "Time Lapse": "Rewinds Weaver's position and health to where they were a few seconds ago."
+        }
+    },
+    "Jakiro": {
+        "description": "A versatile support hero who excels at controlling areas with damage over time.",
+        "abilities": {
+            "Dual Breath": "Releases two streams of fire and ice, slowing and damaging enemies.",
+            "Ice Path": "Creates a path of ice that stuns and damages enemies.",
+            "Liquid Fire": "Burns enemies with a delayed attack that slows and deals damage over time.",
+            "Macropyre": "Creates a line of fire that deals damage over time to enemies within."
+        }
+    },
+    "Batrider": {
+        "description": "A durable initiator with strong mobility and crowd control abilities.",
+        "abilities": {
+            "Sticky Napalm": "Coats an area with a slowing substance, increasing damage taken by affected enemies.",
+            "Flamebreak": "Launches a projectile that knocks back and damages enemies.",
+            "Firefly": "Batrider flies over terrain, leaving a trail of fire that deals damage.",
+            "Flaming Lasso": "Grabs an enemy hero and drags them along with Batrider, disabling them."
+        }
+    },
+    "Chen": {
+        "description": "A support hero who can control neutral creeps and provide healing to his team.",
+        "abilities": {
+            "Penitence": "Slows a target and amplifies the damage they take.",
+            "Holy Persuasion": "Takes control of a neutral creep, empowering it based on Chen's level.",
+            "Divine Favor": "Heals and increases the regeneration of allies.",
+            "Hand of God": "Heals all allied heroes on the map."
+        }
+    },
+    "Spectre": {
+        "description": "A durable carry hero who excels in late-game teamfights by spreading damage across enemies.",
+        "abilities": {
+            "Spectral Dagger": "Creates a shadowy path, slowing enemies and allowing Spectre to pass through terrain.",
+            "Desolate": "Deals bonus damage to isolated enemies.",
+            "Dispersion": "Reflects a portion of incoming damage to nearby enemies.",
+            "Haunt": "Creates illusions that attack each enemy hero, allowing Spectre to teleport to any illusion."
+        }
+    },
+    "Ancient Apparition": {
+        "description": "A ranged support hero who excels at debuffing and finishing off enemies with his abilities.",
+        "abilities": {
+            "Cold Feet": "Places a debuff on an enemy that stuns if they don't move far enough away.",
+            "Ice Vortex": "Creates a slowing field that increases magic damage taken by enemies.",
+            "Chilling Touch": "Grants bonus attack range and magical damage to attacks for a short duration.",
+            "Ice Blast": "Fires a long-range blast that prevents healing and shatters enemies at low health."
+        }
+    },
+    "Doom": {
+        "description": "A durable hero with the ability to disable enemy heroes and deal high damage over time.",
+        "abilities": {
+            "Devour": "Consumes a neutral creep, gaining its abilities and extra gold.",
+            "Scorched Earth": "Deals damage over time to enemies and increases Doom's movement speed.",
+            "Infernal Blade": "Deals damage based on the target's max health and stuns them briefly.",
+            "Doom": "Silences and deals heavy damage over time to an enemy hero."
+        }
+    },
+    "Ursa": {
+        "description": "A melee carry hero who excels at dealing high single-target damage and taking down tanky enemies.",
+        "abilities": {
+            "Earthshock": "Slams the ground, dealing damage and slowing enemies.",
+            "Overpower": "Increases attack speed for a limited number of attacks.",
+            "Fury Swipes": "Ursa's attacks stack bonus damage on the same target.",
+            "Enrage": "Reduces incoming damage and increases Ursa's damage for a short period."
+        }
+    },
+    "Spirit Breaker": {
+        "description": "A durable initiator who excels at disrupting enemies with his high-mobility abilities.",
+        "abilities": {
+            "Charge of Darkness": "Charges across the map to a target, knocking back and stunning enemies in his path.",
+            "Bulldoze": "Increases movement speed and provides status resistance.",
+            "Greater Bash": "Has a chance to knock back and deal bonus damage on attacks.",
+            "Nether Strike": "Teleports behind an enemy, dealing damage and applying Greater Bash."
+        }
+    },
+    "Gyrocopter": {
+        "description": "A ranged carry with strong area-of-effect damage and high mobility.",
+        "abilities": {
+            "Rocket Barrage": "Fires a barrage of rockets at nearby enemies.",
+            "Homing Missile": "Launches a missile that chases a target and stuns upon impact.",
+            "Flak Cannon": "Allows Gyrocopter's attacks to hit all enemies in a radius.",
+            "Call Down": "Calls in two missiles that slow and deal damage in an area."
+        }
+    },
+    "Alchemist": {
+        "description": "A melee carry who excels at farming and becomes stronger with gold.",
+        "abilities": {
+            "Acid Spray": "Covers an area in acid, reducing enemy armor and dealing damage.",
+            "Unstable Concoction": "Brews a concoction that can be thrown to stun and damage enemies.",
+            "Greevil's Greed": "Increases gold gained from killing enemies.",
+            "Chemical Rage": "Increases attack speed, health regeneration, and movement speed."
+        }
+    },
+    "Invoker": {
+        "description": "A versatile caster with access to a wide array of spells depending on his orbs' combination.",
+        "abilities": {
+            "Quas": "Grants Invoker regeneration and access to ice-based spells.",
+            "Wex": "Increases Invoker's movement speed and attack speed while granting access to electricity-based spells.",
+            "Exort": "Increases Invoker's attack damage and grants access to fire-based spells.",
+            "Invoke": "Combines Quas, Wex, or Exort orbs to create one of ten spells."
+        }
+    },
+    "Silencer": {
+        "description": "A support hero who excels at disrupting enemy casters with his silencing abilities.",
+        "abilities": {
+            "Arcane Curse": "Deals damage over time to enemies, prolonging the effect if they cast spells.",
+            "Glaives of Wisdom": "Adds pure damage to Silencer's attacks based on his intelligence.",
+            "Last Word": "Silences and deals damage to enemies who cast spells.",
+            "Global Silence": "Silences all enemies on the map for a few seconds."
+        }
+    },
+    "Outworld Destroyer": {
+        "description": "A ranged hero who excels at dealing pure damage and controlling enemies with his astral abilities.",
+        "abilities": {
+            "Arcane Orb": "Deals bonus pure damage based on Outworld Destroyer's mana pool.",
+            "Astral Imprisonment": "Traps a target in a prison, removing them from play for a few seconds.",
+            "Essence Flux": "Grants a chance to restore mana with each spell cast.",
+            "Sanity's Eclipse": "Deals damage based on the difference between Outworld Destroyer's intelligence and his enemies'."
+        }
+    },
+    "Lycan": {
+        "description": "A melee hero who excels at summoning units and transforming into a powerful wolf to lead his army.",
+        "abilities": {
+            "Summon Wolves": "Summons wolves that deal damage and provide utility through invisibility and critical hits.",
+            "Howl": "Reduces the attack damage and health regeneration of enemies globally.",
+            "Feral Impulse": "Increases the attack damage and regeneration of Lycan and his units.",
+            "Shapeshift": "Transforms Lycan into a powerful wolf, granting him bonus speed, critical hits, and unit control."
+        }
+    },
+    "Brewmaster": {
+        "description": "A durable initiator who can split into elemental forms for added control and damage.",
+        "abilities": {
+            "Thunder Clap": "Slams the ground, damaging and slowing enemies.",
+            "Cinder Brew": "Covers an area in alcohol, amplifying fire-based damage and slowing enemies.",
+            "Drunken Brawler": "Grants evasion and critical strike chance based on Brewmaster's stance.",
+            "Primal Split": "Splits into three elemental spirits, each with their own unique abilities."
+        }
+    },
+    "Shadow Demon": {
+        "description": "A support hero who excels at disruption and creating illusions of enemies.",
+        "abilities": {
+            "Disruption": "Banishes a target, creating illusions of them for a short duration.",
+            "Soul Catcher": "Reduces the health of a target for a short period.",
+            "Shadow Poison": "Deals stacking damage to enemies hit by multiple poison charges.",
+            "Demonic Purge": "Slows and deals damage over time, removing buffs from the target."
+        }
+    },
+    "Lone Druid": {
+        "description": "A durable hero who can summon a powerful Spirit Bear companion.",
+        "abilities": {
+            "Spirit Bear": "Summons a bear companion that fights alongside Lone Druid.",
+            "Rabid": "Increases the attack and movement speed of Lone Druid and his bear.",
+            "Savage Roar": "Forces enemies to flee in fear from Lone Druid and his bear.",
+            "True Form": "Transforms Lone Druid into a bear, increasing durability and granting new abilities."
+        }
+    },
+    "Chaos Knight": {
+        "description": "A durable melee carry hero who relies on illusions and burst damage to quickly kill enemies.",
+        "abilities": {
+            "Chaos Bolt": "Throws a bolt of energy that stuns and deals random damage to an enemy.",
+            "Reality Rift": "Pulls Chaos Knight and the target together, reducing their armor.",
+            "Chaos Strike": "Chaos Knight's attacks have a chance to deal critical damage and heal him.",
+            "Phantasm": "Summons several powerful illusions of Chaos Knight to overwhelm enemies."
+        }
+    },
+    "Meepo": {
+        "description": "A melee hero who controls multiple clones of himself, dealing burst damage and overwhelming enemies.",
+        "abilities": {
+            "Earthbind": "Throws a net that roots enemies in place.",
+            "Poof": "Teleports a Meepo to a location, damaging enemies at both the departure and arrival points.",
+            "Ransack": "Meepo's attacks steal health from enemies.",
+            "Divided We Stand": "Allows Meepo to create clones of himself that share experience and abilities."
+        }
+    },
+    "Treant Protector": {
+        "description": "A durable support hero who excels at healing, protecting, and ambushing enemies.",
+        "abilities": {
+            "Nature's Grasp": "Creates a vine path that slows and damages enemies.",
+            "Leech Seed": "Steals health from an enemy and heals nearby allies.",
+            "Living Armor": "Grants bonus armor and health regeneration to an ally or building.",
+            "Overgrowth": "Roots all enemies in a large area, preventing them from moving or attacking."
+        }
+    },
+    "Ogre Magi": {
+        "description": "A durable support hero with strong crowd control and random chance-based abilities.",
+        "abilities": {
+            "Fireblast": "Deals damage and stuns a target.",
+            "Ignite": "Throws a fireball that slows and deals damage over time.",
+            "Bloodlust": "Increases the attack speed and movement speed of an ally.",
+            "Multicast": "Has a chance to cast Ogre Magi's spells multiple times in quick succession."
+        }
+    },
+    "Undying": {
+        "description": "A durable support hero who excels at weakening enemies and sustaining his team.",
+        "abilities": {
+            "Decay": "Steals strength from enemies, reducing their maximum health.",
+            "Soul Rip": "Heals an ally or damages an enemy based on nearby units.",
+            "Tombstone": "Summons a tombstone that spawns zombies to attack enemies.",
+            "Flesh Golem": "Turns into a powerful golem, slowing and amplifying damage to enemies nearby."
+        }
+    },
+    "Rubick": {
+        "description": "A support hero with the unique ability to steal and use enemy spells.",
+        "abilities": {
+            "Telekinesis": "Lifts an enemy into the air and drops them, stunning nearby enemies.",
+            "Fade Bolt": "Fires a damaging bolt that reduces enemy attack damage.",
+            "Arcane Supremacy": "Increases Rubick's spell amplification and reduces the cast time of his abilities.",
+            "Spell Steal": "Steals the last spell cast by an enemy hero for Rubick to use."
+        }
+    },
+    "Disruptor": {
+        "description": "A support hero who controls positioning and disables enemies with powerful area effects.",
+        "abilities": {
+            "Thunder Strike": "Deals damage to an enemy over time with multiple strikes.",
+            "Glimpse": "Teleports an enemy hero back to where they were a few seconds ago.",
+            "Kinetic Field": "Creates a circular barrier that traps enemies within.",
+            "Static Storm": "Creates a storm that silences and damages enemies in an area."
+        }
+    },
+    "Nyx Assassin": {
+        "description": "A stealthy hero with powerful crowd control and burst damage abilities.",
+        "abilities": {
+            "Impale": "Sends a wave of spikes that stuns and damages enemies.",
+            "Mana Burn": "Burns the target's mana and deals damage based on the amount burned.",
+            "Spiked Carapace": "Reflects damage and stuns enemies that attack Nyx.",
+            "Vendetta": "Turns invisible and grants bonus damage to Nyx's next attack."
+        }
+    },
+    "Naga Siren": {
+        "description": "A durable carry hero who excels at controlling the battlefield with illusions and disables.",
+        "abilities": {
+            "Mirror Image": "Creates illusions of Naga Siren to fight alongside her.",
+            "Ensnare": "Traps an enemy in place, preventing movement.",
+            "Rip Tide": "Damages enemies in an area and reduces their armor.",
+            "Song of the Siren": "Puts all nearby enemies to sleep, preventing them from acting."
+        }
+    },
+    "Keeper of the Light": {
+        "description": "A ranged support hero who excels at providing mana, healing, and controlling enemies from afar.",
+        "abilities": {
+            "Illuminate": "Channels and releases a wave of light that damages enemies.",
+            "Mana Leak": "Drains mana from an enemy when they move.",
+            "Chakra Magic": "Restores mana and reduces the cooldown of an ally's abilities.",
+            "Spirit Form": "Transforms Keeper of the Light, allowing him to use additional abilities and cast Illuminate from a distance."
+        }
+    },
+    "Io": {
+        "description": "A support hero with strong tethering and global repositioning abilities.",
+        "abilities": {
+            "Tether": "Links to an ally, granting them bonus movement speed and sharing healing.",
+            "Spirits": "Summons spirits that rotate around Io, dealing damage to enemies they hit.",
+            "Overcharge": "Increases attack speed and reduces incoming damage for Io and a tethered ally.",
+            "Relocate": "Teleports Io and a tethered ally to another location on the map."
+        }
+    },
+    "Visage": {
+        "description": "A durable support hero who controls powerful Familiars and excels at reducing enemy defenses.",
+        "abilities": {
+            "Grave Chill": "Steals attack and movement speed from an enemy.",
+            "Soul Assumption": "Stores damage taken by nearby units and releases it as a burst on an enemy.",
+            "Gravekeeper's Cloak": "Provides layers of protection that reduce incoming damage.",
+            "Summon Familiars": "Summons powerful flying units that can deal damage and stun enemies."
+        }
+    },
+    "Slark": {
+        "description": "A slippery melee carry hero who excels at escaping danger and stealing stats from enemies.",
+        "abilities": {
+            "Dark Pact": "Slark sacrifices his own health to purge debuffs and damage enemies around him.",
+            "Pounce": "Slark leaps forward, leashing an enemy to the ground, preventing them from escaping.",
+            "Essence Shift": "Slark steals an enemy's attributes with each attack, increasing his own agility.",
+            "Shadow Dance": "Slark becomes invisible and gains bonus movement speed and regeneration when not visible to enemies."
+        }
+    },
+    "Medusa": {
+        "description": "A ranged carry hero with strong area-of-effect abilities and mana-based durability.",
+        "abilities": {
+            "Split Shot": "Medusa's attacks hit multiple targets with reduced damage.",
+            "Mystic Snake": "Throws a snake that jumps between enemies, stealing mana and dealing damage.",
+            "Mana Shield": "Uses Medusa's mana to absorb incoming damage.",
+            "Stone Gaze": "Turns enemies who look at Medusa to stone, reducing their attack and movement speed."
+        }
+    },
+    "Troll Warlord": {
+        "description": "A versatile carry hero who excels at both ranged and melee combat with fast attacks and crowd control.",
+        "abilities": {
+            "Berserker's Rage": "Allows Troll to switch between melee and ranged forms, gaining different bonuses.",
+            "Whirling Axes": "Throws axes in both melee and ranged forms, damaging and slowing enemies.",
+            "Fervor": "Grants bonus attack speed with each consecutive attack on the same target.",
+            "Battle Trance": "Troll Warlord goes into a frenzy, gaining lifesteal and attacking the nearest enemy."
+        }
+    },
+    "Centaur Warrunner": {
+        "description": "A durable initiator who excels at tanking damage and leading his team into battle.",
+        "abilities": {
+            "Hoof Stomp": "Stomps the ground, stunning and damaging nearby enemies.",
+            "Double Edge": "Deals heavy damage to an enemy and Centaur himself.",
+            "Retaliate": "Returns damage to attackers based on Centaur's health.",
+            "Stampede": "Allied units gain bonus movement speed and can run through enemies, damaging and stunning them."
+        }
+    },
+    "Magnus": {
+        "description": "A durable initiator with powerful area-of-effect abilities that reposition enemies.",
+        "abilities": {
+            "Shockwave": "Fires a wave of energy that damages enemies in a line.",
+            "Empower": "Grants bonus attack damage and cleave to an ally.",
+            "Skewer": "Magnus charges forward, dragging enemies along and dealing damage.",
+            "Reverse Polarity": "Magnus pulls in enemies around him, stunning and damaging them."
+        }
+    },
+    "Timbersaw": {
+        "description": "A durable hero who excels at dealing pure damage and cutting down trees for added mobility.",
+        "abilities": {
+            "Whirling Death": "Deals damage in an area and reduces enemies' primary attributes.",
+            "Timber Chain": "Fires a chain that pulls Timbersaw to a tree, dealing damage to enemies in the path.",
+            "Reactive Armor": "Grants bonus armor and health regeneration for each attack taken.",
+            "Chakram": "Throws a sawblade that slows and damages enemies in its path."
+        }
+    },
+    "Bristleback": {
+        "description": "A durable tank hero who becomes more dangerous the more damage he takes.",
+        "abilities": {
+            "Viscous Nasal Goo": "Covers an enemy in goo, reducing their armor and slowing them.",
+            "Quill Spray": "Releases quills in all directions, dealing damage in an area around Bristleback.",
+            "Bristleback": "Reduces damage taken from attacks hitting Bristleback from behind or the sides.",
+            "Warpath": "Increases Bristleback's movement speed and attack damage with each spell cast."
+        }
+    },
+    "Tusk": {
+        "description": "A durable initiator hero with strong crowd control and burst damage.",
+        "abilities": {
+            "Ice Shards": "Fires shards of ice that block enemies and damage them.",
+            "Snowball": "Tusk and nearby allies roll in a snowball, stunning enemies upon impact.",
+            "Tag Team": "Slows and increases attack damage on enemies around Tusk and his allies.",
+            "Walrus Punch": "Critically strikes an enemy, dealing bonus damage and knocking them into the air."
+        }
+    },
+    "Skywrath Mage": {
+        "description": "A fragile but powerful nuker with high burst magical damage.",
+        "abilities": {
+            "Arcane Bolt": "Fires a fast-moving magical projectile that deals bonus damage based on Skywrath's intelligence.",
+            "Concussive Shot": "Fires a shot that slows the nearest enemy hero.",
+            "Ancient Seal": "Silences an enemy and increases the magic damage they take.",
+            "Mystic Flare": "Calls down a powerful area-of-effect spell that deals massive damage to all enemies in a small area."
+        }
+    },
+    "Abaddon": {
+        "description": "A durable support hero with strong defensive abilities and the ability to heal allies and himself.",
+        "abilities": {
+            "Mist Coil": "Heals an ally or damages an enemy, at the cost of Abaddon's health.",
+            "Aphotic Shield": "Places a shield on an ally that absorbs damage and explodes when broken.",
+            "Curse of Avernus": "Slows enemies with each attack, eventually silencing them.",
+            "Borrowed Time": "Redirects incoming damage to heal Abaddon instead."
+        }
+    },
+    "Elder Titan": {
+        "description": "A durable initiator hero with strong area-of-effect crowd control and damage amplification abilities.",
+        "abilities": {
+            "Echo Stomp": "Slams the ground, putting nearby enemies to sleep.",
+            "Astral Spirit": "Sends forth a spirit that damages enemies and strengthens Elder Titan based on the enemies hit.",
+            "Natural Order": "Reduces the armor and magic resistance of nearby enemies.",
+            "Earth Splitter": "Splits the ground in a line, slowing and dealing damage based on a percentage of enemies' max health."
+        }
+    },
+    "Legion Commander": {
+        "description": "A durable initiator and carry hero with strong single-target lockdown and damage amplification abilities.",
+        "abilities": {
+            "Overwhelming Odds": "Deals damage based on the number of enemies in an area and grants bonus movement speed.",
+            "Press the Attack": "Removes debuffs from an ally and grants them attack speed and health regeneration.",
+            "Moment of Courage": "Legion Commander has a chance to instantly counterattack when struck, healing herself.",
+            "Duel": "Forces an enemy to duel Legion Commander. The winner of the duel gains permanent bonus attack damage."
+        }
+    },
+    "Techies": {
+        "description": "A long-range hero who specializes in planting traps and dealing high area-of-effect damage.",
+        "abilities": {
+            "Proximity Mines": "Plants an invisible mine that explodes when an enemy comes near.",
+            "Sticky Bomb": "Throws a bomb that sticks to enemies, slowing them and dealing damage.",
+            "Blast Off!": "Techies leaps into the air and explodes upon landing, dealing massive damage and silencing enemies.",
+            "Remote Mines": "Plants an invisible mine that can be manually detonated to deal massive area damage."
+        }
+    },
+    "Ember Spirit": {
+        "description": "A highly mobile carry hero with strong area damage and crowd control.",
+        "abilities": {
+            "Searing Chains": "Ember Spirit binds nearby enemies, preventing them from moving and dealing damage over time.",
+            "Sleight of Fist": "Ember Spirit dashes around, striking all enemies in a targeted area.",
+            "Flame Guard": "Surrounds Ember Spirit in fire, absorbing damage and dealing damage to nearby enemies.",
+            "Fire Remnant": "Ember Spirit leaves behind Fire Remnants that he can dash to, damaging enemies along the way."
+        }
+    },
+    "Earth Spirit": {
+        "description": "A durable initiator hero with strong crowd control and mobility.",
+        "abilities": {
+            "Boulder Smash": "Kicks a stone or enemy, damaging and stunning them as they fly.",
+            "Rolling Boulder": "Earth Spirit turns into a boulder and rolls forward, damaging enemies in his path.",
+            "Geomagnetic Grip": "Pulls a stone remnant towards Earth Spirit, silencing and damaging enemies in its path.",
+            "Magnetize": "Deals damage over time to nearby enemies and spreads to other enemies when a stone remnant is used."
+        }
+    },
+    "Underlord": {
+        "description": "A durable initiator and area-control hero with powerful area-of-effect spells and a team mobility ultimate.",
+        "abilities": {
+            "Firestorm": "Calls down waves of fire to damage enemies in an area.",
+            "Pit of Malice": "Creates a pit that roots enemies who enter it.",
+            "Atrophy Aura": "Reduces the attack damage of nearby enemies and grants bonus damage to Underlord when enemies die.",
+            "Dark Rift": "Opens a portal that teleports Underlord and nearby allies to a targeted location."
+        }
+    },
+    "Terrorblade": {
+        "description": "A ranged carry hero who creates illusions of himself and steals health from enemies.",
+        "abilities": {
+            "Reflection": "Slows enemies and creates illusions of them to attack them.",
+            "Conjure Image": "Creates an illusion of Terrorblade to fight alongside him.",
+            "Metamorphosis": "Transforms into a powerful ranged demon, increasing his attack damage.",
+            "Sunder": "Swaps Terrorblade's health with a target, potentially healing him and severely damaging the target."
+        }
+    },
+    "Phoenix": {
+        "description": "A durable support hero with powerful area-of-effect damage and healing abilities.",
+        "abilities": {
+            "Icarus Dive": "Phoenix dives forward in a fiery arc, damaging and slowing enemies.",
+            "Fire Spirits": "Launches fire spirits that damage and reduce the attack speed of enemies.",
+            "Sun Ray": "Fires a beam of energy that damages enemies and heals allies along its path.",
+            "Supernova": "Phoenix turns into a burning sun, damaging and stunning enemies in an area. If not destroyed, Phoenix is reborn."
+        }
+    },
+    "Oracle": {
+        "description": "A support hero with strong healing and saving abilities, capable of turning the tide of fights.",
+        "abilities": {
+            "Fortune's End": "Charges a bolt of energy that roots and purges an enemy target.",
+            "Fate's Edict": "Disarms an enemy or ally, making them immune to magic damage.",
+            "Purifying Flames": "Deals damage over time to a target, but then heals them for more.",
+            "False Promise": "Grants an ally a delayed heal, preventing them from dying for a short time."
+        }
+    },
+    "Winter Wyvern": {
+        "description": "A ranged support hero with powerful healing and crowd control abilities.",
+        "abilities": {
+            "Arctic Burn": "Gains flying movement and slows enemies while dealing percentage-based damage over time.",
+            "Splinter Blast": "Fires a projectile that shatters upon hitting an enemy, damaging and slowing nearby units.",
+            "Cold Embrace": "Heals an ally and makes them immune to physical damage for a short time.",
+            "Winter's Curse": "Freezes an enemy in place and forces their allies to attack them."
+        }
+    },
+    "Arc Warden": {
+        "description": "A ranged carry hero with a unique clone ability, capable of doubling his presence on the battlefield.",
+        "abilities": {
+            "Flux": "Slows and deals damage to an enemy if they are isolated.",
+            "Magnetic Field": "Creates a bubble that grants evasion and attack speed to allied units inside it.",
+            "Spark Wraith": "Summons a wraith that damages enemies who come near it.",
+            "Tempest Double": "Creates a clone of Arc Warden with all of his abilities and items, allowing him to cast spells twice."
+        }
+    },
+    "Monkey King": {
+        "description": "A versatile melee hero who can transform into trees and has powerful area-of-effect abilities.",
+        "abilities": {
+            "Boundless Strike": "Monkey King enlarges his staff, dealing critical damage and stunning enemies in a line.",
+            "Tree Dance": "Allows Monkey King to leap onto trees, gaining bonus vision.",
+            "Jingu Mastery": "After landing a number of attacks, Monkey King gains lifesteal and bonus damage.",
+            "Wukong's Command": "Creates a circle of Monkey King clones that attack enemies inside the area."
+        }
+    },
+    "Dark Willow": {
+        "description": "A support hero with strong crowd control and area damage spells.",
+        "abilities": {
+            "Bramble Maze": "Creates a maze of brambles that root enemies who walk into them.",
+            "Shadow Realm": "Dark Willow becomes untargetable and charges up an attack that deals bonus magic damage.",
+            "Cursed Crown": "Places a delayed stun on an enemy that affects nearby units after a few seconds.",
+            "Terrorize": "Forces enemies in an area to flee back to their fountain."
+        }
+    },
+    "Pangolier": {
+        "description": "A highly mobile hero with strong area-of-effect damage and crowd control abilities.",
+        "abilities": {
+            "Swashbuckle": "Pangolier dashes forward and slashes enemies in a targeted direction.",
+            "Shield Crash": "Pangolier leaps into the air and crashes down, damaging enemies and granting him damage reduction.",
+            "Heartpiercer": "Pangolier's attacks have a chance to apply a debuff that slows enemies and reduces their armor after a delay.",
+            "Rolling Thunder": "Pangolier curls into a ball and rolls around, stunning enemies he collides with."
+        }
+    },
+    "Grimstroke": {
+        "description": "A support hero with strong crowd control and damage amplification abilities.",
+        "abilities": {
+            "Stroke of Fate": "Fires a wave of ink that damages and slows enemies, dealing more damage the farther it travels.",
+            "Phantom's Embrace": "Summons a phantom that latches onto an enemy, silencing and damaging them over time.",
+            "Ink Swell": "Covers an ally in ink, making them immune to attacks and damaging nearby enemies after a delay.",
+            "Soulbind": "Binds two enemy heroes together, causing spells to affect both and preventing them from moving apart."
+        }
+    },
+    "Hoodwink": {
+        "description": "A ranged agility hero who excels at hit-and-run tactics and setting traps.",
+        "abilities": {
+            "Acorn Shot": "Hoodwink fires an acorn that bounces between enemies, slowing and damaging them.",
+            "Bushwhack": "Throws a net trap that pulls enemies towards a tree, stunning them.",
+            "Scurry": "Grants bonus movement speed and evasion when near trees.",
+            "Sharpshooter": "Fires a long-range shot that deals massive damage, slowing and breaking the target."
+        }
+    },
+    "Void Spirit": {
+        "description": "A mobile mid-lane hero with strong burst damage and crowd control.",
+        "abilities": {
+            "Aether Remnant": "Summons a remnant that pulls in enemies who come near it, dealing damage.",
+            "Dissimilate": "Void Spirit creates portals and disappears briefly, reappearing to deal damage in an area.",
+            "Resonant Pulse": "Emits a damaging wave around Void Spirit, granting him a shield based on the number of enemies hit.",
+            "Astral Step": "Void Spirit dashes to a target location, dealing damage and slowing enemies along the way."
+        }
+    },
+    "Snapfire": {
+        "description": "A ranged support hero who deals heavy area damage with her shotgun and explosive mortars.",
+        "abilities": {
+            "Scatterblast": "Fires a wide blast of shrapnel, dealing more damage at close range.",
+            "Firesnap Cookie": "Snapfire tosses an ally forward, stunning and damaging enemies when they land.",
+            "Lil' Shredder": "Rapidly fires multiple attacks, lowering enemy attack speed and dealing damage.",
+            "Mortimer Kisses": "Snapfire's companion fires long-range mortars that deal damage and slow enemies."
+        }
+    },
+    "Mars": {
+        "description": "A durable initiator hero who excels at controlling the battlefield with his spear and shield.",
+        "abilities": {
+            "Spear of Mars": "Mars hurls a spear that damages and stuns enemies, pinning them to a tree or wall if hit.",
+            "God's Rebuke": "Mars swings his shield, damaging and knocking back enemies in front of him.",
+            "Bulwark": "Mars passively blocks a percentage of damage from the front and sides.",
+            "Arena of Blood": "Creates an arena of soldiers that block enemy movement and attack enemies within the arena."
+        }
+    },
+    "Ringmaster": {
+        "description": "A support hero who uses illusions and trickery to control the battlefield.",
+        "abilities": {
+            "Illusionary Whip": "Creates illusions of nearby enemy heroes to confuse and deal damage.",
+            "Chain Shackles": "Binds enemies in chains, slowing their movement and dealing damage over time.",
+            "Circus Spectacle": "Summons an interactive area where enemies are forced to participate, disrupting their actions.",
+            "Grand Finale": "Ringmaster deals massive damage to all enemies in the area, using energy stored from previous interactions."
+        }
+    },
+    "Dawnbreaker": {
+        "description": "A tanky initiator with powerful area healing and damage-dealing abilities.",
+        "abilities": {
+            "Starbreaker": "Dawnbreaker swings her hammer three times, stunning and damaging enemies with the final blow.",
+            "Celestial Hammer": "Throws her hammer forward, which damages enemies and leaves a trail of fire.",
+            "Luminosity": "Empowers her attacks, healing nearby allies when she strikes multiple enemies.",
+            "Solar Guardian": "Leaps to a target location, dealing damage and healing allies upon impact."
+        }
+    },
+    "Marci": {
+        "description": "A melee hero who excels at mobility and crowd control, assisting her team with buffs and stuns.",
+        "abilities": {
+            "Dispose": "Marci grabs an enemy or ally and throws them behind her, stunning and damaging enemies where they land.",
+            "Rebound": "Leaps to a target ally or location, gaining bonus movement speed and attacking nearby enemies.",
+            "Sidekick": "Grants herself and a nearby ally bonus lifesteal and attack damage.",
+            "Unleash": "Unleashes a flurry of rapid punches, stunning and damaging enemies with each combo."
+        }
+    },
+    "Primal Beast": {
+        "description": "A tanky initiator with disruptive abilities, specializing in trampling and controlling enemies.",
+        "abilities": {
+            "Onslaught": "Primal Beast charges in a straight line, knocking back and damaging enemies in his path.",
+            "Trample": "Stomps around the battlefield, dealing damage to all enemies in an area.",
+            "Uproar": "Gains stacks of damage and armor the more he is attacked, releasing a roar that slows enemies.",
+            "Pulverize": "Grabs an enemy and slams them into the ground, dealing area damage with each slam."
+        }
+    },
+    "Muerta": {
+        "description": "A ranged hero who manipulates life and death, dealing high damage while controlling enemies.",
+        "abilities": {
+            "Deadshot": "Fires a ghostly bullet that ricochets off an enemy, dealing damage and slowing enemies in a line.",
+            "The Calling": "Summons circling spirits that silence and slow enemies caught within their radius.",
+            "Gunslinger": "Muerta gains a chance to fire a second shot from her pistol, dealing bonus damage.",
+            "Pierce the Veil": "Muerta becomes immune to physical damage and deals pure damage for a short duration."
+        }
+    }
+
+
+
+
+} as any as Map<string, HeroAbilitiesInfo>; 
