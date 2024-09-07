@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { Live } from '$lib/dota2Api';
+	import { TI_TEAMS } from '$lib/tiDb';
 	import Player from '../components/Player.svelte';
 
 	export let data;
@@ -59,19 +60,41 @@
 	<div class="modal-box">
 		{#if matchSelected}
 			<div class="prose">
-				<h4 class=" text-center">
-					{matchSelected.team_name_radiant} : {matchSelected.team_name_dire}
-				</h4>
-				<h2 class="font-bold text-center">
+				<div class="flex flex-row items-center text-center">
+					<img
+						alt={matchSelected.team_name_radiant}
+						src={TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.logo_url}
+						width="50px"
+						class="ml-4 mr-3 my-0"
+					/>
+					<div class="flex flex-1">
+						<div class="flex flex-col w-1/2">
+							<div class="font-bold text-3xl">
+								{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.tag}
+							</div>
+							<div class="text-xs">
+								{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.name}
+							</div>
+						</div>
+						<div class="flex-1">:</div>
+						<div class="flex flex-col w-1/2">
+							<div class="font-bold text-3xl">
+								{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.tag}
+							</div>
+							<div class="text-xs">
+								{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.name}
+							</div>
+						</div>
+					</div>
+					<img
+						alt={matchSelected.team_name_dire}
+						src={TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.logo_url}
+						width="50px"
+						class="ml-4 mr-3 my-0"
+					/>
+				</div>
+				<div class="font-bold text-center text-4xl mt-5">
 					{matchSelected.radiant_score} : {matchSelected.dire_score}
-				</h2>
-				<div class="flex" style="justify-content: center;">
-					<button
-						class="btn btn-sm btn-primary btn-wide"
-						on:click={() => {
-							goto('/matches/' + matchSelected.match_id);
-						}}>Details</button
-					>
 				</div>
 
 				<div class="flex">
@@ -90,6 +113,15 @@
 							{/each}
 						</tbody>
 					</table>
+				</div>
+
+				<div class="flex my-3" style="justify-content: center;">
+					<button
+						class="btn btn-sm btn-primary btn-wide"
+						on:click={() => {
+							goto('/matches/' + matchSelected.match_id);
+						}}>Details</button
+					>
 				</div>
 			</div>
 		{/if}

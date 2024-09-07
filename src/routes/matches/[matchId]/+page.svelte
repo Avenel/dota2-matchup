@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import PlayerDetail from '../../../components/PlayerDetail.svelte';
 
 	export let data;
