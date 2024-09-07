@@ -6,13 +6,14 @@
 
 	let hero = HEROES.find((x) => x.id === player.hero_id);
 	let heroStats = HEROES_STATS.find((x) => x.id === player.hero_id);
-	let heroIcon = 'https://cdn.cloudflare.steamstatic.com' + heroStats?.img;
+
+	let heroIcon = (heroStats: any) => 'https://cdn.cloudflare.steamstatic.com' + heroStats?.img;
 </script>
 
 <tr>
 	<td>
 		<div class="flex flex-col">
-			<img alt={hero?.name} src={heroIcon} height="30px" class="flex-1" />
+			<img alt={hero?.name} src={heroIcon(heroStats)} height="30px" class="flex-1 my-0" />
 			<strong>{player.name}</strong>
 		</div>
 	</td>

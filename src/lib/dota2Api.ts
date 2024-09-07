@@ -67,6 +67,13 @@ export class PlayerDetail {
     public name!: string;
 }
 
+export class Team {
+    public team_id!: number;
+    public name!: string;
+    public tag!: string
+    public logo_url!: string;
+}
+
 export class Match {
     public match_id!: number;
     public start_time!: number;
@@ -74,10 +81,12 @@ export class Match {
 
     public players!: Array<PlayerDetail>;
 
+    public radiant_team!: Team;
     public radiant_team_id!: number;
     public radiant_name!: string;
     public radiant_logo!: number;
 
+    public dire_team!: Team;
     public dire_team_id!: number;
     public dire_name!: string;
     public dire_logo!: number;

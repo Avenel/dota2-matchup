@@ -12,7 +12,7 @@
 <tr>
 	<td>
 		<div class="flex flex-col">
-			<img alt={hero?.name} src={heroIcon} height="30px" class="flex-1" />
+			<img alt={hero?.name} src={heroIcon} class="flex-1 my-0" />
 			<strong>{player.name}</strong>
 		</div>
 	</td>

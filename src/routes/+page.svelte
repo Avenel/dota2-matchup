@@ -36,6 +36,7 @@
 									class="hover"
 									on:click={() => {
 										matchSelected = match;
+										console.log(matchSelected);
 										matchModal.showModal();
 									}}
 								>
@@ -64,7 +65,6 @@
 				<h2 class="font-bold text-center">
 					{matchSelected.radiant_score} : {matchSelected.dire_score}
 				</h2>
-				{matchSelected.match_id}
 				<div class="flex" style="justify-content: center;">
 					<button
 						class="btn btn-sm btn-primary btn-wide"
