@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import type { Live, Match } from '$lib/dota2Api';
 	import { TI_TEAMS } from '$lib/tiDb';
 	import Player from './Player.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 
-	export let matchSelected: Live;
+	export let matchSelected: Live & { analysis: string };
 
 	const formatGameTime = (gameTime: number) => {
 		const minutes = Math.floor(gameTime / 60);
@@ -80,6 +80,13 @@
 					{/each}
 				</tbody>
 			</table>
+		</div>
+
+		<div tabindex="-1" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+			<div class="collapse-title text-xl font-medium">Analysis</div>
+			<div class="collapse-content prose">
+				<SvelteMarkdown source={matchSelected.analysis} />
+			</div>
 		</div>
 
 		<div class="flex my-3" style="justify-content: center;">
