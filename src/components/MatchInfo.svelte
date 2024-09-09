@@ -82,7 +82,8 @@
 			</table>
 		</div>
 
-		<div tabindex="-1" class="collapse collapse-arrow border-base-300 bg-base-200 border">
+		<div tabindex="-1" class="collapse collapse-arrow bg-base-200 text-base-content">
+			<input type="checkbox" />
 			<div class="collapse-title text-xl font-medium">Analysis</div>
 			<div class="collapse-content prose">
 				<SvelteMarkdown source={matchSelected.analysis} />
