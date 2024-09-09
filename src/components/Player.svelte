@@ -21,13 +21,20 @@
 	let heroImage = (heroStats: any) => 'https://cdn.cloudflare.steamstatic.com' + heroStats?.img;
 
 	let heroModal: HTMLDialogElement;
+	let heroModalBody: HTMLDivElement;
 </script>
 
 <tr>
 	<td>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div class="flex flex-col" on:click={() => heroModal.showModal()}>
+		<div
+			class="flex flex-col"
+			on:click={() => {
+				heroModal.showModal();
+				heroModalBody.scrollTo({ top: 0 });
+			}}
+		>
 			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'}">
 				<img
 					alt={hero?.name}
@@ -43,29 +50,29 @@
 </tr>
 
 <dialog bind:this={heroModal} class="modal modal-bottom">
-	<div class="modal-box prose">
+	<div bind:this={heroModalBody} class="modal-box prose">
 		{#if hero}
-			<h3 class="text-lg font-bold flex flex-col items-center">
-				<div class="flex">
-					<img
-						alt={hero.name}
-						src={heroIcon(heroStats)}
-						height="30px"
-						style="height:30px;"
-						class="my-0 mr-2"
-					/>
-					<div class="text-2xl font-bold mb-2">{hero.localized_name}</div>
-				</div>
+			<h3 class="text-lg font-bold flex flex-col items-center mb-0">
 				<img
 					alt={hero.name}
 					src={heroImage(heroStats)}
 					height="100px"
 					style="height:100px; object-fit: contain;"
-					class="my-0 mr-2"
+					class="my-0"
 				/>
+				<div class="flex items-center justify-center">
+					<img
+						alt={hero.name}
+						src={heroIcon(heroStats)}
+						height="30px"
+						style="height:30px;"
+						class="my-0"
+					/>
+					<div class="text-2xl font-bold mt-2">{hero.localized_name}</div>
+				</div>
 			</h3>
 
-			<div class="mt-2 text-center font-bold">
+			<div class="text-center font-bold">
 				{heroInfo(hero.localized_name)?.attack_type} | {heroInfo(hero.localized_name)
 					?.primary_attribute} | {heroInfo(hero.localized_name)?.role}
 			</div>
