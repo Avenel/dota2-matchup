@@ -7,8 +7,10 @@
 		type HeroAbilitiesInfo
 	} from '$lib/tiDb';
 	import type { Player } from '$lib/dota2Api';
+	import type { LivePlayerInfo } from '$lib/stratzApi';
 
 	export let player: Player;
+	export let playerLiveInfo: LivePlayerInfo | undefined;
 	export let rtl: boolean;
 
 	let hero = HEROES.find((x) => x.id === player.hero_id);
@@ -44,6 +46,13 @@
 					class="my-0"
 				/>
 				<div class="text-base truncate mx-2" style="max-width: 75%;">{player.name}</div>
+			</div>
+			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-1">
+				<div class="badge badge-ghost font-bold">
+					<span class="mx-1">{playerLiveInfo?.numKills}</span> /
+					<span class="mx-1">{playerLiveInfo?.numDeaths}</span>
+					/ <span class="mx-1">{playerLiveInfo?.numAssists}</span>
+				</div>
 			</div>
 		</div>
 	</td>

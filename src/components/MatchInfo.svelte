@@ -1,10 +1,11 @@
 <script lang="ts">
 	import type { Live, Match } from '$lib/dota2Api';
+	import type { LiveMatchInfo, MatchInfoView } from '$lib/stratzApi';
 	import { TI_TEAMS } from '$lib/tiDb';
 	import Player from './Player.svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 
-	export let matchSelected: Live & { analysis: string };
+	export let matchSelected: Live & { analysis: string } & { liveInfo: MatchInfoView | undefined };
 
 	const formatGameTime = (gameTime: number) => {
 		const minutes = Math.floor(gameTime / 60);
@@ -43,6 +44,13 @@
 				<div>
 					{formatGameTime(matchSelected.game_time ?? 0)}
 				</div>
+				{#if matchSelected.liveInfo?.completed}
+					<div class="font-bold">
+						{matchSelected.liveInfo?.didRadiantWin ? 'Radiant won' : 'Dire won'}
+					</div>
+				{:else}
+					<progress class="progress w-56 progress-primary"></progress>
+				{/if}
 			</div>
 			<div class="flex flex-col w-1/4 bg-content text-content items-center">
 				<div class="avatar">
@@ -68,7 +76,13 @@
 			<table class="table">
 				<tbody>
 					{#each matchSelected.players.filter((x) => x.team === 0) as player}
-						<Player {player} rtl={false}></Player>
+						<Player
+							{player}
+							rtl={false}
+							playerLiveInfo={matchSelected.liveInfo
+								? matchSelected.liveInfo.radiantPlayers?.find((p) => p.heroId == player.hero_id)
+								: undefined}
+						></Player>
 					{/each}
 				</tbody>
 			</table>
@@ -76,7 +90,13 @@
 			<table class="table">
 				<tbody>
 					{#each matchSelected.players.filter((x) => x.team === 1) as player}
-						<Player {player} rtl={true}></Player>
+						<Player
+							{player}
+							rtl={true}
+							playerLiveInfo={matchSelected.liveInfo
+								? matchSelected.liveInfo.direPlayers?.find((p) => p.heroId == player.hero_id)
+								: undefined}
+						></Player>
 					{/each}
 				</tbody>
 			</table>
@@ -84,7 +104,7 @@
 
 		<div tabindex="-1" class="collapse collapse-arrow bg-base-200 text-base-content">
 			<input type="checkbox" />
-			<div class="collapse-title text-xl font-medium">Analysis</div>
+			<div class="collapse-title text-xl font-medium">Draft Analysis</div>
 			<div class="collapse-content prose">
 				<SvelteMarkdown source={matchSelected.analysis} />
 			</div>
@@ -92,9 +112,11 @@
 
 		<div class="flex my-3" style="justify-content: center;">
 			<a
-				href={'https://www.opendota.com/matches/' + matchSelected.match_id}
+				href={'https://stratz.com/matches/' +
+					matchSelected.match_id +
+					(matchSelected.liveInfo?.completed ? '' : '/live')}
 				target="_blank"
-				class="btn btn-sm btn-primary btn-outline btn-wide">Watch on opendota.com</a
+				class="btn btn-sm btn-primary btn-outline btn-wide">Watch on stratz.com</a
 			>
 		</div>
 	</div>

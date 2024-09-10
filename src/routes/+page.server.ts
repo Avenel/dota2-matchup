@@ -1,4 +1,4 @@
-import { Live, ProMatch, TeamMatch } from "$lib/dota2Api.js";
+import { Live, openDotaLiveCache } from "$lib/dota2Api.js";
 import axios from "axios";
 import { OPENAI_KEY } from '$env/static/private';
 import { ChatOpenAI } from '@langchain/openai';
@@ -6,23 +6,32 @@ import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { HEROES } from "$lib/tiDb.js";
 import { openAIMatchupAnalysisCache } from "$lib/openAICache.js"
+import { getLiveMatchInfo, getMatchInfo, type LiveMatchInfo, type MatchInfoView } from "$lib/stratzApi.js";
 
 export async function load(event) {
 
     let matches = new Array<Live>();
     console.log('Fetching live matches for TI 2024...');
-    const proMatchesResponse = await axios.get("http://api.opendota.com/api/live");
-    matches = proMatchesResponse.data as Array<Live>;
-    matches = matches.filter(x => x.league_id == 16935).slice(0, 20);
-    matches.sort((a, b) => {
-        if ((a.game_time ?? 0) === (b.game_time ?? 0)) {
-            return 0;
-        }
 
-        return (a.game_time ?? 0) === (b.game_time ?? 0) ? 1 : -1;
-    })
+    matches = await openDotaLiveCache.get('live') as Array<Live>;
+    if (!matches) {
+        console.log('Fetching fresh live matches from opendota.com ...');
+        const proMatchesResponse = await axios.get("http://api.opendota.com/api/live");
+        matches = proMatchesResponse.data as Array<Live>;
+        matches = matches.filter(x => x.league_id == 16935).slice(0, 20);
+        matches.sort((a, b) => {
+            if ((a.game_time ?? 0) === (b.game_time ?? 0)) {
+                return 0;
+            }
 
-    const matchesWithAnalysis: Array<(Live & { analysis: string })> = [];
+            return (a.game_time ?? 0) === (b.game_time ?? 0) ? 1 : -1;
+        })
+
+        openDotaLiveCache.set('live', matches);
+    }
+
+
+    const matchesWithAnalysis: Array<(Live & { analysis: string } & { liveInfo: (MatchInfoView | undefined) })> = [];
     for (let match of matches) {
 
         if (match.players.filter(x => HEROES.find(h => h.id === x.hero_id)).length !== 10) {
@@ -89,9 +98,36 @@ export async function load(event) {
             // console.log('SET request for key: ', prompt);
         }
 
+        let liveMatchInfo: MatchInfoView | undefined;
+        const matchInfo = await getMatchInfo(match.match_id);
+        if (matchInfo) {
+            liveMatchInfo = {
+                completed: true,
+                direPlayers: matchInfo.players.filter(x => !x.isRadiant),
+                radiantPlayers: matchInfo.players.filter(x => x.isRadiant),
+                direScore: matchInfo.direScore,
+                radiantScore: matchInfo.radiantScore,
+                didRadiantWin: matchInfo.didRadiantWin,
+                matchId: matchInfo.matchId
+            }
+        } else {
+            const latestLiveMatchInfo = await getLiveMatchInfo(match.match_id);
+            liveMatchInfo = {
+                completed: false,
+                direPlayers: latestLiveMatchInfo?.direPlayers ?? [],
+                radiantPlayers: latestLiveMatchInfo?.radiantPlayers ?? [],
+                direScore: latestLiveMatchInfo?.direScore ?? 0,
+                radiantScore: latestLiveMatchInfo?.radiantScore ?? 0,
+                didRadiantWin: false,
+                matchId: match.match_id
+            }
+        }
+
+
         matchesWithAnalysis.push({
-            ...match, analysis: analysisFromCache.analysis
-        })
+            ...match, analysis: analysisFromCache.analysis,
+            liveInfo: liveMatchInfo
+        });
     }
 
     console.log('Fetched live matches for TI 2024.');

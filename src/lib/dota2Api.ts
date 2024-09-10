@@ -1,3 +1,12 @@
+import { FileSystemCache } from "file-system-cache";
+
+export const openDotaLiveCache = new FileSystemCache({
+    basePath: "./.cache/openDotaLive", // (optional) Path where cache files are stored (default).
+    ns: "openDotaLive",   // (optional) A grouping namespace for items.
+    hash: "sha1",          // (optional) A hashing algorithm used within the cache key.
+    ttl: 15
+});
+
 export class ProMatch {
     public duration!: number;
     public radiant_name!: string;
