@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Live, Match } from '$lib/dota2Api';
-	import type { LiveMatchInfo, MatchInfoView } from '$lib/stratzApi';
+	import type { Live } from '$lib/dota2Api';
+	import type { MatchInfoView } from '$lib/stratzApi';
 	import { TI_TEAMS } from '$lib/tiDb';
 	import Player from './Player.svelte';
 	import SvelteMarkdown from 'svelte-markdown';
@@ -49,7 +49,7 @@
 						{matchSelected.liveInfo?.didRadiantWin ? 'Radiant won' : 'Dire won'}
 					</div>
 				{:else}
-					<progress class="progress w-56 progress-primary"></progress>
+					<progress class="progress w-1/3 progress-primary"></progress>
 				{/if}
 			</div>
 			<div class="flex flex-col w-1/4 bg-content text-content items-center">

@@ -56,14 +56,14 @@ export interface MatchInfo {
     players: Array<LivePlayerInfo>;
 }
 
-export interface MatchInfoView {
-    matchId: number;
-    radiantScore: number;
-    direScore: number;
-    completed: boolean;
-    didRadiantWin: boolean;
-    radiantPlayers: Array<LivePlayerInfo>;
-    direPlayers: Array<LivePlayerInfo>;
+export class MatchInfoView {
+    matchId!: number;
+    radiantScore!: number;
+    direScore!: number;
+    completed!: boolean;
+    didRadiantWin!: boolean;
+    radiantPlayers!: Array<LivePlayerInfo>;
+    direPlayers!: Array<LivePlayerInfo>;
 }
 
 export async function getLiveMatchInfo(matchId: number): Promise<(LiveMatchInfo | undefined)> {
