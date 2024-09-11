@@ -157,6 +157,9 @@ export async function getLiveMatches(): Promise<Array<LiveMatchInfo>> {
 }
 
 export async function getMatches(matchIds: Array<number>): Promise<Array<MatchInfo>> {
+    if (matchIds.length === 0)
+        return [];
+
     let matchesInfo = await matchesInfoCache.get(matchIds.join(',')) as Array<MatchInfo>;
     if (!matchesInfo) {
         console.log('Fetching latest matches info...');
