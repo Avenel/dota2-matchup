@@ -69,7 +69,7 @@
 		</div>
 
 		<div class="flex">
-			<table class="table">
+			<table class="table table-md w-1/2" style="table-layout: fixed;">
 				<tbody>
 					{#each matchSelected.players.filter((x) => x.isRadiant) as player}
 						<Player rtl={false} playerLiveInfo={player}></Player>
@@ -77,7 +77,7 @@
 				</tbody>
 			</table>
 
-			<table class="table">
+			<table class="table table-md w-1/2" style="table-layout: fixed;">
 				<tbody>
 					{#each matchSelected.players.filter((x) => !x.isRadiant) as player}
 						<Player rtl={true} playerLiveInfo={player}></Player>
