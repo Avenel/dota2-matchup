@@ -7,6 +7,7 @@
 		type HeroAbilitiesInfo
 	} from '$lib/tiDb';
 	import type { LivePlayerInfo } from '$lib/stratzApi';
+	import ItemInfo from './ItemInfo.svelte';
 
 	export let playerLiveInfo: LivePlayerInfo;
 	export let rtl: boolean;
@@ -28,14 +29,14 @@
 	<td>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
-		<div
-			class="flex flex-col"
-			on:click={() => {
-				heroModal.showModal();
-				heroModalBody.scrollTo({ top: 0 });
-			}}
-		>
-			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'}">
+		<div class="flex flex-col">
+			<div
+				class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'}"
+				on:click={() => {
+					heroModal.showModal();
+					heroModalBody.scrollTo({ top: 0 });
+				}}
+			>
 				<img
 					alt={hero?.name}
 					src={heroIcon(heroStats)}
@@ -47,12 +48,23 @@
 					{playerLiveInfo.name ?? playerLiveInfo.steamAccount?.name}
 				</div>
 			</div>
-			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-1">
-				<div class="badge badge-ghost font-bold">
+			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-2">
+				<div class="badge badge-lg badge-ghost font-bold">
 					<span class="mx-1">{playerLiveInfo?.numKills}</span> /
 					<span class="mx-1">{playerLiveInfo?.numDeaths}</span>
 					/ <span class="mx-1">{playerLiveInfo?.numAssists}</span>
 				</div>
+			</div>
+
+			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-2">
+				<ItemInfo itemId={playerLiveInfo.itemId0}></ItemInfo>
+				<ItemInfo itemId={playerLiveInfo.itemId1}></ItemInfo>
+				<ItemInfo itemId={playerLiveInfo.itemId2}></ItemInfo>
+			</div>
+			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-1">
+				<ItemInfo itemId={playerLiveInfo.itemId3}></ItemInfo>
+				<ItemInfo itemId={playerLiveInfo.itemId4}></ItemInfo>
+				<ItemInfo itemId={playerLiveInfo.itemId5}></ItemInfo>
 			</div>
 		</div>
 	</td>
