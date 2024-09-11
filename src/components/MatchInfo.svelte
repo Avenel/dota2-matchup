@@ -14,7 +14,7 @@
 </script>
 
 <div class="card bg-base-100 min-w-full lg:min-w-80 shadow-xl my-2">
-	<div class="card-body">
+	<div class="card-body px-0 lg:px-3">
 		<div class="flex flex-row items-center text-center bg-content">
 			<div class="flex flex-col w-1/4 bg-content text-content items-center">
 				<div class="avatar">
