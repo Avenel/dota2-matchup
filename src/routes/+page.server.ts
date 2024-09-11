@@ -1,58 +1,63 @@
-import { Live, openDotaLiveCache } from "$lib/dota2Api.js";
 import axios from "axios";
 import { OPENAI_KEY } from '$env/static/private';
 import { ChatOpenAI } from '@langchain/openai';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { HEROES } from "$lib/tiDb.js";
-import { openAIMatchupAnalysisCache } from "$lib/openAICache.js"
-import { getLiveMatchInfo, getMatchInfo, type LiveMatchInfo, type MatchInfoView } from "$lib/stratzApi.js";
+import { draftAnalysisCache } from "$lib/openAICache.js"
+import { getLiveMatches, getMatches, type LiveMatchInfo, type MatchInfoView } from "$lib/stratzApi.js";
 
 export async function load(event) {
 
-    let matches = new Array<Live>();
+    let matches = new Array<MatchInfoView>();
     console.log('Fetching live matches for TI 2024...');
 
-    matches = await openDotaLiveCache.get('live') as Array<Live>;
-    if (!matches) {
-        console.log('Fetching fresh live matches from opendota.com ...');
-        const proMatchesResponse = await axios.get("http://api.opendota.com/api/live");
-        matches = proMatchesResponse.data as Array<Live>;
-        matches = matches.filter(x => x.league_id == 16935).slice(0, 20);
-        matches.sort((a, b) => {
-            if ((a.game_time ?? 0) === (b.game_time ?? 0)) {
-                return 0;
-            }
+    let liveMatches = await getLiveMatches();
+    const matchesCompletedInfo = await getMatches(liveMatches.map(x => x.matchId));
 
-            return (a.game_time ?? 0) === (b.game_time ?? 0) ? 1 : -1;
-        })
-
-        openDotaLiveCache.set('live', matches);
-    }
-
-
-    const matchesWithAnalysis: Array<(Live & { analysis: string } & { liveInfo: (MatchInfoView | undefined) })> = [];
-    for (let match of matches) {
-
-        if (match.players.filter(x => HEROES.find(h => h.id === x.hero_id)).length !== 10) {
+    for (let liveMatch of liveMatches) {
+        if (liveMatch.players.filter(x => x.heroId === 0).length > 0) {
             console.warn('Game is still in picking phase, skipping...');
             continue;
         }
 
-        const radiantPlayers = match.players.filter(x => x.team == 0);
-        const matchupRadiant = radiantPlayers.map(x => {
-            return HEROES.find(h => h.id === x.hero_id)?.localized_name ?? ''
-        }).join(',');
+        let matchInfoView: MatchInfoView = {
+            ...liveMatch
+        };
 
-        const direPlayers = match.players.filter(x => x.team == 1);
-        const matchupDire = direPlayers.map(x => {
-            return HEROES.find(h => h.id === x.hero_id)?.localized_name ?? ''
-        }).join(',');
+        matchInfoView.draftAnalysis = await getMatchDraftAnalysis(liveMatch);
 
-        const matchup = `Radiant: ${matchupRadiant}; Dire: ${matchupDire}`;
-        console.log("Matchup: ", matchup);
+        const matchCompletedInfo = matchesCompletedInfo.find(x => x.matchId == liveMatch.matchId);
+        if (matchCompletedInfo) {
+            matchInfoView.completed = true;
+            matchInfoView.didRadiantWin = matchCompletedInfo.didRadiantWin;
+        }
 
-        const humanPrompt = `You are the best DotA 2 Analyser on the planet and you also have been a very successful player. Please
+        matches.push(matchInfoView);
+    }
+
+    console.log('Fetched live matches for TI 2024.');
+
+    return {
+        matches
+    }
+}
+
+async function getMatchDraftAnalysis(liveMatch: LiveMatchInfo): Promise<string> {
+    const radiantPlayers = liveMatch.players.filter(x => x.isRadiant);
+    const matchupRadiant = radiantPlayers.map(x => {
+        return HEROES.find(h => h.id === x.heroId)?.localized_name ?? ''
+    }).join(',');
+
+    const direPlayers = liveMatch.players.filter(x => !x.isRadiant);
+    const matchupDire = direPlayers.map(x => {
+        return HEROES.find(h => h.id === x.heroId)?.localized_name ?? ''
+    }).join(',');
+
+    const matchup = `Radiant: ${matchupRadiant}; Dire: ${matchupDire}`;
+    console.log("Matchup: ", matchup);
+
+    const humanPrompt = `You are the best DotA 2 Analyser on the planet and you also have been a very successful player. Please
                 look at the following DotA 2 Matchup and explain to a Newbie. Please make it concise, short and use the following format (markdown):
 
                 ### Composition
@@ -74,66 +79,26 @@ export async function load(event) {
             DOTA 2 MATCHUP: 
             {matchup}`
 
-        const prompt = ChatPromptTemplate.fromMessages([
-            ['human', humanPrompt]
-        ]);
-        const model = new ChatOpenAI({
-            apiKey: OPENAI_KEY,
-            model: 'gpt-4o'
+    const prompt = ChatPromptTemplate.fromMessages([
+        ['human', humanPrompt]
+    ]);
+    const model = new ChatOpenAI({
+        apiKey: OPENAI_KEY,
+        model: 'gpt-4o'
+    });
+    const outputParser = new StringOutputParser();
+
+    const chain = prompt.pipe(model).pipe(outputParser);
+
+    const cacheKey = humanPrompt.replace('{matchup}', JSON.stringify(matchup));
+    let analysisFromCache = (await draftAnalysisCache.get(cacheKey)) as string;
+    if (!analysisFromCache) {
+        const response = await chain.invoke({
+            matchup
         });
-        const outputParser = new StringOutputParser();
-
-        const chain = prompt.pipe(model).pipe(outputParser);
-
-        const cacheKey = humanPrompt.replace('{matchup}', JSON.stringify(matchup));
-        let analysisFromCache = (await openAIMatchupAnalysisCache.get(cacheKey)) as { analysis: string };
-        if (!analysisFromCache) {
-            // console.log('matchup not in cache, getting it fresh...', cacheKey)
-            const response = await chain.invoke({
-                matchup
-            });
-            // console.log('Got matchup...', response)
-            analysisFromCache = { analysis: response };
-            openAIMatchupAnalysisCache.set(cacheKey, analysisFromCache);
-            // console.log('SET request for key: ', prompt);
-        }
-
-        let liveMatchInfo: MatchInfoView | undefined;
-        const matchInfo = await getMatchInfo(match.match_id);
-        if (matchInfo) {
-            liveMatchInfo = {
-                completed: true,
-                direPlayers: matchInfo.players.filter(x => !x.isRadiant),
-                radiantPlayers: matchInfo.players.filter(x => x.isRadiant),
-                direScore: matchInfo.direScore,
-                radiantScore: matchInfo.radiantScore,
-                didRadiantWin: matchInfo.didRadiantWin,
-                matchId: matchInfo.matchId
-            }
-        } else {
-            const latestLiveMatchInfo = await getLiveMatchInfo(match.match_id);
-            liveMatchInfo = {
-                completed: false,
-                direPlayers: latestLiveMatchInfo?.direPlayers ?? [],
-                radiantPlayers: latestLiveMatchInfo?.radiantPlayers ?? [],
-                direScore: latestLiveMatchInfo?.direScore ?? 0,
-                radiantScore: latestLiveMatchInfo?.radiantScore ?? 0,
-                didRadiantWin: false,
-                matchId: match.match_id
-            }
-        }
-
-
-        matchesWithAnalysis.push({
-            ...match, analysis: analysisFromCache.analysis,
-            liveInfo: liveMatchInfo
-        });
+        analysisFromCache = response;
+        draftAnalysisCache.set(cacheKey, analysisFromCache);
     }
 
-    console.log('Fetched live matches for TI 2024.');
-
-    return {
-        matches: matchesWithAnalysis
-    }
-
+    return analysisFromCache;
 }

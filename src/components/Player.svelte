@@ -6,15 +6,13 @@
 		HEROES_STATS,
 		type HeroAbilitiesInfo
 	} from '$lib/tiDb';
-	import type { Player } from '$lib/dota2Api';
 	import type { LivePlayerInfo } from '$lib/stratzApi';
 
-	export let player: Player;
-	export let playerLiveInfo: LivePlayerInfo | undefined;
+	export let playerLiveInfo: LivePlayerInfo;
 	export let rtl: boolean;
 
-	let hero = HEROES.find((x) => x.id === player.hero_id);
-	let heroStats = HEROES_STATS.find((x) => x.id === player.hero_id);
+	let hero = HEROES.find((x) => x.id === playerLiveInfo.heroId);
+	let heroStats = HEROES_STATS.find((x) => x.id === playerLiveInfo.heroId);
 	let heroInfo = (name: string) => Object.entries(HEROES_SHORT_INFO).find((x) => x[0] == name)?.[1];
 	let heroAbilitiesInfo = (name: string) =>
 		Object.entries(HEROES_ABILITIES_INFO).find((x) => x[0] == name)?.[1] as HeroAbilitiesInfo;
@@ -45,7 +43,9 @@
 					style="height:30px;"
 					class="my-0"
 				/>
-				<div class="text-base truncate mx-2" style="max-width: 75%;">{player.name}</div>
+				<div class="text-base truncate mx-2" style="max-width: 75%;">
+					{playerLiveInfo.name ?? playerLiveInfo.steamAccount?.name}
+				</div>
 			</div>
 			<div class="flex items-center {rtl ? 'flex-row-reverse' : 'flex-row'} mt-1">
 				<div class="badge badge-ghost font-bold">

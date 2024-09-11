@@ -9,14 +9,23 @@ export const liveMatchInfoCache = new FileSystemCache({
     ttl: 15
 });
 
-export const matchInfoCache = new FileSystemCache({
-    basePath: "./.cache/matchInfo", // (optional) Path where cache files are stored (default).
-    ns: "matchinfo",   // (optional) A grouping namespace for items.
+export const liveMatchesInfoCache = new FileSystemCache({
+    basePath: "./.cache/liveMatchesInfo", // (optional) Path where cache files are stored (default).
+    ns: "livematchesinfo",   // (optional) A grouping namespace for items.
+    hash: "sha1",          // (optional) A hashing algorithm used within the cache key.
+    ttl: 15
+});
+
+export const matchesInfoCache = new FileSystemCache({
+    basePath: "./.cache/matchesInfo", // (optional) Path where cache files are stored (default).
+    ns: "matchesinfo",   // (optional) A grouping namespace for items.
     hash: "sha1",          // (optional) A hashing algorithm used within the cache key.
 });
 
 export interface LivePlayerInfo {
     heroId: number;
+    name: string;
+    steamAccount: { name: string };
     playerSlot: number;
     isRadiant: boolean;
     numKills: number;
@@ -38,77 +47,143 @@ export interface LivePlayerInfo {
     baseWinRateValue: number;
 }
 
-export interface LiveMatchInfo {
-    matchId: number;
-    radiantScore: number;
-    direScore: number;
-    completed: boolean;
-    radiantPlayers: Array<LivePlayerInfo>;
-    direPlayers: Array<LivePlayerInfo>;
-}
-
 export interface MatchInfo {
     matchId: number;
     radiantScore: number;
     direScore: number;
     completed: boolean;
     didRadiantWin: boolean;
+}
+
+export interface TeamInfo {
+    name: string;
+    tag: string;
+    isPro: boolean;
+    logo: string;
+}
+
+export interface LiveMatchInfo {
+    matchId: number;
+
+    completed: boolean;
+    gameTime: number;
+
+    radiantScore: number;
+    radiantTeam?: TeamInfo;
+
+    direScore: number;
+    direTeam?: TeamInfo;
+
     players: Array<LivePlayerInfo>;
 }
 
-export class MatchInfoView {
-    matchId!: number;
-    radiantScore!: number;
-    direScore!: number;
-    completed!: boolean;
-    didRadiantWin!: boolean;
-    radiantPlayers!: Array<LivePlayerInfo>;
-    direPlayers!: Array<LivePlayerInfo>;
+export interface MatchInfoView extends LiveMatchInfo {
+    didRadiantWin?: boolean;
+    draftAnalysis?: string;
 }
 
-export async function getLiveMatchInfo(matchId: number): Promise<(LiveMatchInfo | undefined)> {
-    let liveMatchInfo: (LiveMatchInfo | undefined);
-
-    liveMatchInfo = await liveMatchInfoCache.get(matchId.toString()) as LiveMatchInfo;
-    if (!liveMatchInfo) {
+export async function getLiveMatches(): Promise<Array<LiveMatchInfo>> {
+    let liveMatchesInfo = await liveMatchesInfoCache.get('live') as Array<LiveMatchInfo>;
+    if (!liveMatchesInfo) {
         console.log('Fetching latest match live info...');
-        const liveMatchInfoResponse = await axios.get(`https://api.stratz.com/api/v1/match/${matchId}/live`,
+        const query = `{
+            live {
+                matches(request: { orderBy: GAME_TIME, tiers: PROFESSIONAL }) {
+                matchId,
+                gameTime,
+                radiantLead,
+                radiantScore,
+                radiantTeam {
+                    name,
+                    tag,
+                    isPro,
+                    logo
+                },
+                direTeam {
+                    name,
+                    tag,
+                    isPro,
+                    logo
+                }
+                direScore,
+                completed,
+                players {
+                    heroId,
+                    name,
+                    playerSlot,
+                    isRadiant,
+                    numKills,
+                    numDeaths,
+                    numAssists,
+                    goldPerMinute,
+                    networth,
+                    itemId0,
+                    itemId1,
+                    itemId2,
+                    itemId3,
+                    itemId4,
+                    itemId5,
+                    backpackId0,
+                    backpackId1,
+                    backpackId2,
+                    level,
+                    steamAccount {
+                    name
+                    }
+                }
+                }
+            }
+        }`
+
+        const liveMatchesInfoResponse = await axios.post(`https://api.stratz.com/graphql`,
+            { query },
             {
                 headers: {
+                    "Content-Type": 'application/json',
                     Authorization: `Bearer ${STRATZ_API_KEY}`
                 }
             }
         );
 
-        if (liveMatchInfoResponse.status === 200) {
-            liveMatchInfo = liveMatchInfoResponse.data as LiveMatchInfo;
+        if (liveMatchesInfoResponse.status === 200) {
+            liveMatchesInfo = liveMatchesInfoResponse.data.data.live.matches as Array<LiveMatchInfo>;
             console.log('Fetched latest match live info.')
         }
 
-        liveMatchInfoCache.set(matchId.toString(), liveMatchInfo);
+        liveMatchInfoCache.set('live', liveMatchesInfo);
     }
-    return liveMatchInfo;
+
+    return liveMatchesInfo;
 }
 
-export async function getMatchInfo(matchId: number): Promise<(MatchInfo | undefined)> {
-    let matchInfo: (MatchInfo | undefined);
-    console.log('Fetching MatchInfo...');
-    matchInfo = await matchInfoCache.get(matchId.toString()) as MatchInfo;
-    if (!matchInfo) {
-        const liveMatchInfoResponse = await axios.get(`https://api.stratz.com/api/v1/match/${matchId}`,
+export async function getMatches(matchIds: Array<number>): Promise<Array<MatchInfo>> {
+    let matchesInfo = await matchesInfoCache.get(matchIds.join(',')) as Array<MatchInfo>;
+    if (!matchesInfo) {
+        console.log('Fetching latest matches info...');
+        const query = `{
+            matches(ids: [${matchIds.join(',')}]) {
+                id,
+                didRadiantWin
+            }
+        }`;
+
+        const matchesInfoResponse = await axios.post(`https://api.stratz.com/graphql`,
+            { query },
             {
                 headers: {
-                    Authorization: `Bearer ${STRATZ_API_KEY}`,
-                    "Content-Type": "application/json"
+                    "Content-Type": 'application/json',
+                    Authorization: `Bearer ${STRATZ_API_KEY}`
                 }
             }
         );
 
-        if (liveMatchInfoResponse.status === 200) {
-            matchInfo = liveMatchInfoResponse.data as MatchInfo;
-            matchInfoCache.set(matchId.toString(), matchInfo);
+        if (matchesInfoResponse.status === 200) {
+            matchesInfo = matchesInfoResponse.data.data.matches as Array<MatchInfo>;
+            console.log('Fetched latest match live info.')
         }
+
+        matchesInfoCache.set(matchIds.join(','), matchesInfo);
     }
-    console.log('Fetched MatchInfo', matchInfo != null);
-    return matchInfo;
+
+    return matchesInfo ?? [];
 }

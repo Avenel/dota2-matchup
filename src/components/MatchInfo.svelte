@@ -1,11 +1,9 @@
 <script lang="ts">
-	import type { Live } from '$lib/dota2Api';
 	import type { MatchInfoView } from '$lib/stratzApi';
-	import { TI_TEAMS } from '$lib/tiDb';
 	import Player from './Player.svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 
-	export let matchSelected: Live & { analysis: string } & { liveInfo: MatchInfoView | undefined };
+	export let matchSelected: MatchInfoView;
 
 	const formatGameTime = (gameTime: number) => {
 		const minutes = Math.floor(gameTime / 60);
@@ -22,31 +20,29 @@
 				<div class="avatar">
 					<div class="rounded-xl bg-base-300 p-1">
 						<img
-							alt={matchSelected.team_name_radiant}
-							src={TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.logo_url}
+							alt={matchSelected.radiantTeam?.name ?? 'PUG'}
+							src={matchSelected.radiantTeam?.logo}
 							class="my-0"
 							style="object-fit:contain; width: 50px;"
 						/>
 					</div>
 				</div>
-				<div class="font-bold text-xl">
-					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.tag}
-				</div>
+				<div class="font-bold text-xl">{matchSelected.radiantTeam?.tag ?? '-'}</div>
 
 				<div class="text-xs">
-					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_radiant)?.name}
+					{matchSelected.radiantTeam?.name ?? 'PUG'}
 				</div>
 			</div>
 			<div class="flex-1">
 				<div class="font-bold text-center text-3xl bg-content text-content">
-					{matchSelected.radiant_score} : {matchSelected.dire_score}
+					{matchSelected.radiantScore} : {matchSelected.direScore}
 				</div>
 				<div>
-					{formatGameTime(matchSelected.game_time ?? 0)}
+					{formatGameTime(matchSelected.gameTime ?? 0)}
 				</div>
-				{#if matchSelected.liveInfo?.completed}
+				{#if matchSelected.completed}
 					<div class="font-bold">
-						{matchSelected.liveInfo?.didRadiantWin ? 'Radiant won' : 'Dire won'}
+						{matchSelected.didRadiantWin ? 'Radiant won' : 'Dire won'}
 					</div>
 				{:else}
 					<progress class="progress w-1/3 progress-primary"></progress>
@@ -56,18 +52,18 @@
 				<div class="avatar">
 					<div class="rounded-xl bg-base-300 p-1">
 						<img
-							alt={matchSelected.team_name_dire}
-							src={TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.logo_url}
+							alt={matchSelected.direTeam?.name ?? 'PUG'}
+							src={matchSelected.direTeam?.logo}
 							class="my-0"
 							style="object-fit:contain; width: 50px;"
 						/>
 					</div>
 				</div>
 				<div class="font-bold text-xl">
-					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.tag}
+					{matchSelected.direTeam?.tag ?? '-'}
 				</div>
 				<div class="text-xs">
-					{TI_TEAMS.find((x) => x.team_id == matchSelected.team_id_dire)?.name}
+					{matchSelected.direTeam?.name ?? 'PUG'}
 				</div>
 			</div>
 		</div>
@@ -75,28 +71,16 @@
 		<div class="flex">
 			<table class="table">
 				<tbody>
-					{#each matchSelected.players.filter((x) => x.team === 0) as player}
-						<Player
-							{player}
-							rtl={false}
-							playerLiveInfo={matchSelected.liveInfo
-								? matchSelected.liveInfo.radiantPlayers?.find((p) => p.heroId == player.hero_id)
-								: undefined}
-						></Player>
+					{#each matchSelected.players.filter((x) => x.isRadiant) as player}
+						<Player rtl={false} playerLiveInfo={player}></Player>
 					{/each}
 				</tbody>
 			</table>
 
 			<table class="table">
 				<tbody>
-					{#each matchSelected.players.filter((x) => x.team === 1) as player}
-						<Player
-							{player}
-							rtl={true}
-							playerLiveInfo={matchSelected.liveInfo
-								? matchSelected.liveInfo.direPlayers?.find((p) => p.heroId == player.hero_id)
-								: undefined}
-						></Player>
+					{#each matchSelected.players.filter((x) => !x.isRadiant) as player}
+						<Player rtl={true} playerLiveInfo={player}></Player>
 					{/each}
 				</tbody>
 			</table>
@@ -106,15 +90,15 @@
 			<input type="checkbox" />
 			<div class="collapse-title text-xl font-medium">Draft Analysis</div>
 			<div class="collapse-content prose">
-				<SvelteMarkdown source={matchSelected.analysis} />
+				<SvelteMarkdown source={matchSelected.draftAnalysis} />
 			</div>
 		</div>
 
 		<div class="flex my-3" style="justify-content: center;">
 			<a
 				href={'https://stratz.com/matches/' +
-					matchSelected.match_id +
-					(matchSelected.liveInfo?.completed ? '' : '/live')}
+					matchSelected.matchId +
+					(matchSelected.completed ? '' : '/live')}
 				target="_blank"
 				class="btn btn-sm btn-primary btn-outline btn-wide">Watch on stratz.com</a
 			>
