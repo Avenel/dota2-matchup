@@ -88,7 +88,7 @@ export async function getLiveMatches(): Promise<Array<LiveMatchInfo>> {
         console.log('Fetching latest match live info...');
         const query = `{
             live {
-                matches(request: { orderBy: GAME_TIME }) {
+                matches(request: { orderBy: GAME_TIME, tiers: PROFESSIONAL }) {
                 matchId,
                 gameTime,
                 radiantLead,
