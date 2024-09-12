@@ -6,7 +6,7 @@
 	let itemModal: HTMLDialogElement;
 	let itemModalBody: HTMLDivElement;
 
-	let item = Object.entries(ITEMS).find((x) => x[0] == itemId.toString())?.[1];
+	let item = Object.entries(ITEMS).find((x) => x[0] == itemId?.toString() ?? '-1')?.[1];
 	let itemDescription =
 		(item?.language.description?.length ?? 0) > 0 ? item?.language.description[0] : '';
 	itemDescription = itemDescription
